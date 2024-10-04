@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular-Beispiele</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"],
+        input[type="file"] {
+            width: auto;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            margin-top: 20px;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Formularelemente Beispiele</h2>
+<form id="exampleForm">
+    <label for="text">Textfeld:</label>
+    <input type="text" id="text" name="text" placeholder="Text hier eingeben">
+
+    <label for="password">Passwortfeld:</label>
+    <input type="password" id="password" name="password" placeholder="Passwort hier eingeben">
+
+    <label for="email">E-Mail-Feld:</label>
+    <input type="email" id="email" name="email" placeholder="Email-Adresse">
+
+    <label for="url">URL-Feld:</label>
+    <input type="url" id="url" name="url" placeholder="https://example.com">
+
+    <label for="number">Zahlenfeld:</label>
+    <input type="number" id="number" name="number" min="1" max="10" placeholder="1-10">
+
+    <label for="tel">Telefonnummer-Feld:</label>
+    <input type="tel" id="tel" name="tel" placeholder="123-456-7890">
+
+    <label for="date">Datum:</label>
+    <input type="date" id="date" name="date">
+
+    <label for="time">Zeit:</label>
+    <input type="time" id="time" name="time">
+
+    <label for="color">Farbauswahl:</label>
+    <input type="color" id="color" name="color" value="#ff0000">
+
+    <label for="range">Slider:</label>
+    <input type="range" id="range" name="range" min="0" max="100">
+
+    <label>Checkboxen:</label>
+    <input type="checkbox" id="checkbox1" name="checkbox1" value="Option 1"> Option 1
+    <input type="checkbox" id="checkbox2" name="checkbox2" value="Option 2"> Option 2
+
+    <label>Radiobuttons:</label>
+    <input type="radio" id="radio1" name="radioGroup" value="Radio 1"> Radio 1
+    <input type="radio" id="radio2" name="radioGroup" value="Radio 2"> Radio 2
+
+    <label for="dropdown">Dropdown-Menü:</label>
+    <select id="dropdown" name="dropdown">
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+        <option value="Option 3">Option 3</option>
+    </select>
+
+    <label for="file">Dateiupload:</label>
+    <input type="file" id="file" name="file">
+
+    <label for="textarea">Mehrzeiliger Text:</label>
+    <textarea id="textarea" name="textarea" rows="4" placeholder="Schreibe hier etwas..."></textarea>
+
+    <button type="submit">Formular senden</button>
+</form>
+
+<div class="result" id="result"></div>
+
+<script>
+    // JavaScript, um die Formulardaten zu verarbeiten
+    document.getElementById('exampleForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Verhindert das Standard-Verhalten (Seiten-Reload)
+        
+        // Formulardaten sammeln
+        const text = document.getElementById('text').value;
+        const password = document.getElementById('password').value;
+        const email = document.getElementById('email').value;
+        const url = document.getElementById('url').value;
+        const number = document.getElementById('number').value;
+        const tel = document.getElementById('tel').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const color = document.getElementById('color').value;
+        const range = document.getElementById('range').value;
+        const checkbox1 = document.getElementById('checkbox1').checked;
+        const checkbox2 = document.getElementById('checkbox2').checked;
+        const radioGroup = document.querySelector('input[name="radioGroup"]:checked');
+        const dropdown = document.getElementById('dropdown').value;
+        const file = document.getElementById('file').value;
+        const textarea = document.getElementById('textarea').value;
+
+        // Ausgabe der Daten
+        let resultText = `
+            <strong>Formulardaten:</strong><br>
+            Textfeld: ${text}<br>
+            Passwortfeld: ${password}<br>
+            E-Mail-Feld: ${email}<br>
+            URL-Feld: ${url}<br>
+            Zahlenfeld: ${number}<br>
+            Telefonnummer-Feld: ${tel}<br>
+            Datum: ${date}<br>
+            Zeit: ${time}<br>
+            Farbauswahl: ${color}<br>
+            Slider: ${range}<br>
+            Checkboxen: ${checkbox1 ? 'Option 1' : ''} ${checkbox2 ? 'Option 2' : ''}<br>
+            Radiobutton: ${radioGroup ? radioGroup.value : 'Keine Auswahl'}<br>
+            Dropdown: ${dropdown}<br>
+            Datei: ${file ? file : 'Keine Datei ausgewählt'}<br>
+            Mehrzeiliger Text: ${textarea}<br>
+        `;
+        
+        document.getElementById('result').innerHTML = resultText;
+    });
+</script>
+
+</body>
+</html>
