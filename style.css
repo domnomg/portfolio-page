@@ -27,7 +27,7 @@ body, html {
     background-color: white;
 }
 
-/* Titel, der in der Mitte der Seite angezeigt wird */
+/* Titel PORTFOLIO DOMINIQUE, der in der Mitte der Seite angezeigt wird */
 .title {
     position: absolute;
     top: 50%; /* Positioniert in der Mitte vertikal */
@@ -36,29 +36,59 @@ body, html {
     font-size: 54px; /* Vergrößerte Schriftgröße */
     color: black;
     text-align: center;
-    opacity: 0; /* Startzustand: Unsichtbar */
-    animation: fadeIn 2s ease forwards; /* Animation, um den Titel erscheinen zu lassen */
+    z-index: 1;
 }
 
-/* "Portfolio" leicht nach links versetzt */
-.portfolio {
-    position: relative;
-    left: 20px;
+/* Neuer Content Bereich */
+.content-section {
+    display: flex;
+    padding: 20px;
 }
 
-/* "Testperson TTT" leicht nach rechts versetzt */
-.name {
-    position: relative;
-    left: 30px;
-    animation-delay: 0.5s; /* Verzögerung, damit der Name später erscheint */
+.left-section {
+    width: 50%;
+    padding: 20px;
 }
 
-/* Animation für das Erscheinen des Titels */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.right-section {
+    width: 50%;
+    display: flex;
+    justify-content: center; /* Zentriert das Bild */
+    align-items: center; /* Zentriert das Bild vertikal */
+}
+
+.profile-pic {
+    width: 40%; /* Bildbreite anpassen */
+    height: auto; /* Höhe automatisch anpassen */
+}
+
+/* Info-Box für Eigenschaften */
+.info-box {
+    border: 1px solid gray; /* Grauer Rahmen */
+    padding: 20px; /* Innenabstand */
+    background-color: white; /* Hintergrundfarbe */
+}
+
+/* Auflistung der Eigenschaften */
+.info-list {
+    list-style: none; /* Entfernt die Aufzählungszeichen */
+    padding: 0; /* Entfernt den Innenabstand */
+}
+
+/* Button */
+.btn {
+    background-color: white; /* Weiße Füllung */
+    border: 1px solid gray; /* Grauer Rand */
+    color: black; /* Schwarzer Text */
+    border-radius: 5px; /* Abgerundete Ecken */
+    padding: 10px; /* Innenabstand */
+    margin-top: 10px; /* Abstand zwischen den Buttons */
+    cursor: pointer; /* Cursor ändern beim Hover */
+    width: 100%; /* Buttonbreite anpassen */
+    font-size: 16px; /* Schriftgröße */
+}
+
+/* Hover-Effekt für die Buttons */
+.btn:hover {
+    background-color: #f0f0f0; /* Hellgraue Hintergrundfarbe bei Hover */
 }
