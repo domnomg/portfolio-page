@@ -10,13 +10,13 @@ body, html {
 .container {
     display: flex;
     height: 100vh;
-    position: relative; /* Notwendig, um das Titel-Element über beide Bereiche zu platzieren */
+    position: relative;
 }
 
 /* Linke Bildseite */
 .image-section {
     width: 50%;
-    background-image: url('/portfolio-page/Titelbild.jpg'); /* Hier den Pfad zu deinem Bild einfügen */
+    background-image: url('/portfolio-page/Titelbild.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -27,13 +27,13 @@ body, html {
     background-color: white;
 }
 
-/* Titel PORTFOLIO DOMINIQUE, der in der Mitte der Seite angezeigt wird */
+/* Titel PORTFOLIO DOMINIQUE */
 .title {
     position: absolute;
-    top: 50%; /* Positioniert in der Mitte vertikal */
-    left: 50%; /* Positioniert in der Mitte horizontal */
-    transform: translate(-50%, -50%); /* Exakte Zentrierung */
-    font-size: 54px; /* Vergrößerte Schriftgröße */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 54px;
     color: black;
     text-align: center;
     z-index: 1;
@@ -53,42 +53,164 @@ body, html {
 .right-section {
     width: 50%;
     display: flex;
-    justify-content: center; /* Zentriert das Bild */
-    align-items: center; /* Zentriert das Bild vertikal */
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-pic {
-    width: 40%; /* Bildbreite anpassen */
-    height: auto; /* Höhe automatisch anpassen */
+    width: 40%;
+    height: auto;
 }
 
-/* Info-Box für Eigenschaften */
+/* Info-Box */
 .info-box {
-    border: 1px solid gray; /* Grauer Rahmen */
-    padding: 20px; /* Innenabstand */
-    background-color: white; /* Hintergrundfarbe */
+    border: 1px solid gray;
+    padding: 20px;
+    background-color: white;
 }
 
 /* Auflistung der Eigenschaften */
 .info-list {
-    list-style: none; /* Entfernt die Aufzählungszeichen */
-    padding: 0; /* Entfernt den Innenabstand */
+    list-style: none;
+    padding: 0;
 }
 
-/* Button */
+/* Buttons */
 .btn {
-    background-color: white; /* Weiße Füllung */
-    border: 1px solid gray; /* Grauer Rand */
-    color: black; /* Schwarzer Text */
-    border-radius: 5px; /* Abgerundete Ecken */
-    padding: 10px; /* Innenabstand */
-    margin-top: 10px; /* Abstand zwischen den Buttons */
-    cursor: pointer; /* Cursor ändern beim Hover */
-    width: 100%; /* Buttonbreite anpassen */
-    font-size: 16px; /* Schriftgröße */
+    background-color: white;
+    border: 1px solid gray;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
 }
 
-/* Hover-Effekt für die Buttons */
 .btn:hover {
-    background-color: #f0f0f0; /* Hellgraue Hintergrundfarbe bei Hover */
+    background-color: #f0f0f0;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 600px; /* Größere Breite für die Timeline */
+    margin: 50px auto; /* Zentriert die Timeline */
+    padding: 20px 0; /* Abstand oben und unten */
+}
+
+/* Vertikale Linie */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #686565;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container für die Timeline-Elemente */
+.timeline-container {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    background-color: inherit;
+}
+
+/* Linke und rechte Platzierung */
+.timeline-container.left {
+    left: -13%;
+}
+
+.timeline-container.right {
+    left: 50%;
+}
+
+/* Punkte auf der Timeline */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #000;
+    border: 4px solid #686565;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+/* Punkteverschiebung links */
+.timeline-container.left::after {
+    right: -15px;
+}
+
+.timeline-container.right::after {
+    left: -15px;
+}
+
+/* Pfeile für die Container */
+.timeline-container.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #686565;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #686565;
+}
+
+.timeline-container.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #686565;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #686565 transparent transparent;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: #7f7f7f;
+    position: relative;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+}
+
+/* Responsive Anpassungen */
+@media screen and (max-width: 600px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-container.left::before,
+    .timeline-container.right::before {
+        left: 60px;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #000 transparent transparent;
+    }
+
+    .timeline-container.left::after,
+    .timeline-container.right::after {
+        left: 15px;
+    }
+
+    .timeline-container.right {
+        left: 0;
+    }
 }
