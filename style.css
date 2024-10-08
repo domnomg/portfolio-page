@@ -38,8 +38,17 @@ body, html {
     text-align: center;
     z-index: 1;
 }
+.portfolio, .name {
+    display: inline-block;
+    transition: transform 0.1s ease-out; /* Für flüssigere Bewegung */
+}
 
-/* Neuer Content Bereich */
+/* Textbereich */
+.text-section {
+    text-align: center;
+}
+
+/* ______________________________________Vorstellung ICH_____________________________________ */
 .content-section {
     display: flex;
     padding: 20px;
@@ -229,7 +238,7 @@ body, html {
         transform: translateY(0);
     }
 }
-/*______________________________________Titel für Timeline_________*/
+/*______________________________________Titel für Timeline_______________________________*/
 .timeline-header {
     text-align: center;
     margin-bottom: 20px;

@@ -24,3 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Neue Funktion hier einfügen!!
+
+// Funktion, die auf das Scrollen reagiert
+window.addEventListener('scroll', function() {
+    const scrollAmount = window.scrollY; // Die aktuelle Scroll-Höhe
+    const portfolio = document.getElementById('portfolio'); // Zugriff auf das PORTFOLIO-Element
+    const name = document.getElementById('name'); // Zugriff auf das DOMINIQUE GAVIN-Element
+
+    // Definieren Sie den Verschiebungsfaktor (je höher der Wert, desto schneller die Trennung)
+    const shiftFactor = scrollAmount * 0.2;
+
+    // Setze die Transform-Eigenschaft, um die Titel auseinander zu ziehen
+    portfolio.style.transform = `translateX(${-shiftFactor}px)`; // Portfolio nach links
+    name.style.transform = `translateX(${shiftFactor}px)`; // Dominique Gavin nach rechts
+});
