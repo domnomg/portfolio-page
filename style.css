@@ -1,4 +1,4 @@
-/* Allgemeine Einstellungen */
+/*__________________________________________Allgemeine Einstellungen_________________________________________________*/
 body, html {
     margin: 0;
     padding: 0;
@@ -48,40 +48,75 @@ body, html {
     text-align: center;
 }
 
-/* ______________________________________Vorstellung ICH_____________________________________ */
-.content-section {
+/*_______________________________A little about me____________________________________*/
+
+/* Gesamtcontainer für "A little about me" */
+.about-container {
     display: flex;
-    padding: 20px;
+    justify-content: space-between;
+    padding:50px;
+    margin-top: 1cm; /* Abstand von 5cm vom Titelbild */
+    background-color: white;
 }
 
-.left-section {
-    width: 50%;
-    padding: 20px;
+/* Linke Seite: Titel und Text */
+.about-left {
+    width: 30%;
+    text-align: left; /* Linksbündige Ausrichtung */
 }
 
-.right-section {
-    width: 50%;
+/* Titel "A little about me" */
+.about-title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 36px;
+    color: black;
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+
+/* Beschreibungstext unter dem Titel */
+.about-description {
+    font-family: 'Aptos Textkörper', sans-serif; 
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    text-align: left; /* Linksbündige Ausrichtung */
+    transform: translateX(140px); 
+}
+
+/* Rechte Seite: Bilder */
+.about-right {
+    width: 35%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.profile-pic {
-    width: 40%;
-    height: auto;
+/* Fancybild_P22 */
+.about-image-small {
+    width: 40%; /* Verkleinertes Profilbild */
+    transform: rotate(-15deg); /* Rotation */
+    position: absolute;
+    top: -20px; /*Verschiebt das Bild weiter nach oben*/
+    left: -35%; /* Linksorientiert */
+    z-index: 2;
 }
 
-/* Info-Box */
-.info-box {
-    border: 1px solid gray;
+/* Profilbild_P2 */
+.about-image-large {
+    width: 60%; /* Kleineres zweites Bild */
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    z-index: 1;
+}
+
+/* ______________________________________Buttons_____________________________________ */
+.content-section {
+    display: flex;
+    justify-content: center; /* Zentriert die Buttons */
     padding: 20px;
-    background-color: white;
-}
-
-/* Auflistung der Eigenschaften */
-.info-list {
-    list-style: none;
-    padding: 0;
 }
 
 /* Buttons */
@@ -93,13 +128,32 @@ body, html {
     padding: 10px;
     margin-top: 10px;
     cursor: pointer;
-    width: 100%;
+    width: 150px; /* Angepasste Breite für die Buttons */
     font-size: 16px;
 }
 
 .btn:hover {
     background-color: #f0f0f0;
 }
+
+
+/*_____________________________Titel für Timeline_______________________________*/
+.timeline-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .timeline-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-subtitle {
+    font-size: 18px;
+    color: #666;
+  }
+
 
 /* _______________________________TIMELINE_____________________________________________ */
 .timeline {
@@ -238,19 +292,5 @@ body, html {
         transform: translateY(0);
     }
 }
-/*______________________________________Titel für Timeline_______________________________*/
-.timeline-header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .timeline-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .timeline-subtitle {
-    font-size: 18px;
-    color: #666;
-  }
+
+ 
