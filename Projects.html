@@ -7,26 +7,88 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="projects-container">
-        <h1>Meine Projekte</h1>
-        <ul class="projects-list">
-            <li>
-                <h2>Projekt 1: Titel des Projekts</h2>
-                <p>Kurze Beschreibung des Projekts.</p>
-            </li>
-            <li>
-                <h2>Projekt 2: Titel des Projekts</h2>
-                <p>Kurze Beschreibung des Projekts.</p>
-            </li>
-            <li>
-                <h2>Projekt 3: Titel des Projekts</h2>
-                <p>Kurze Beschreibung des Projekts.</p>
-            </li>
-            <!-- Weitere Projekte hinzufügen, wenn gewünscht -->
-        </ul>
-        <a href="index.html" class="back-button">Zurück zum Portfolio</a>
+    
+<!-- Container für den gesamten Inhalt -->
+<div class="projects-container">
+
+    <!-- Linker Bereich: Bild mit abgerundeten Ecken -->
+    <div class="left-section">
+        <img src="Project.jpg" alt="Bild" class="rounded-image">
+          <!-- Zurück-Button -->
+       <a href="index.html" class="back-button">Back to Home</a>
+        <!-- Überlagerndes Quadrat für "Projects" -->
+        <div class="project-title-box">
+            <h3>Projects</h3>
+        </div>
     </div>
 
+    <!-- Rechter Bereich: 6 quadratische Boxen -->
+    <div class="right-section">
+        <div class="box-container">
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <h3>Project 2 BFH</h3>
+                    </div>
+                    <div class="flip-box-back">
+                        <p>Smart City - creating an App "Let's connect Bern" - 6.0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <h3>Process Management</h3>
+                    </div>
+                    <div class="flip-box-back">
+                        <p>Optimization of the 'Ticket Purchase' process at SBB - 5.5</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <h3>Project Biodiversity Bern</h3>
+                    </div>
+                    <div class="flip-box-back">
+                        <p>Creation of a design for a website (User Interface) with Figma for the Biodiversity event in Bern</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <h3>Innovation and Entrepreneurship</h3>
+                    </div>
+                    <div class="flip-box-back">
+                        <p>Developed 'Deliverase', an app for monitoring package deliveries, within 5 days.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <h3>Hack4socialgood</h3>
+                    </div>
+                    <div class="flip-box-back">
+                        <p>Development of an app that promotes volunteer work in Switzerland for the company KarmaLama, in collaboration with the ZHAW School of Social Work</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <h3>Change and Transformation Projects</h3>
+                    </div>
+                    <div class="flip-box-back">
+                        <p>DSM Firmenich AG Project 'Orchestra' - Analysis of the steps in the change process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
     <script src="script.js"></script>
 </body>
 </html>
