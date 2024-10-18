@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Neue Funktion hier einfügen -----------------------------------------
 
+ 
 
 
 
