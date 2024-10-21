@@ -456,6 +456,97 @@ body, html {
     cursor: pointer;
 }
 
-/*____________
+/* _________________________________________CSS für skills.html___________________________________________________ */
 
- 
+/* Hauptcontainer für Skills Seite */
+.skills-container {
+    display: flex;
+    width: 95%;
+    height: 95vh;
+    justify-content: space-between;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+/* Linke Seite: Titel, Untertitel und Textblöcke */
+.skills-left-section {
+    width: 50%; /* Linke Seite nimmt 50% der Breite ein */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+.skills-left-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.skills-left-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.skills-left-section p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Rechte Seite: Bild mit abgerundeten Ecken und Social Media Icons */
+.skills-right-section {
+    width: 40%; /* Rechte Seite nimmt 45% der Breite ein */
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-rounded-image {
+    width: 50%; /* Bild ist kleiner, jetzt 80% der Breite des Containers */
+    height: 430px; /* Höhe passt sich der Breite an */
+    margin-top: 50px;
+    margin-right: -50px;
+    border-radius: 15px; /* Abgerundete Ecken */
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten für das Bild */
+    margin-bottom: 40px; /* Abstand zwischen Bild und Icons */
+}
+
+/* Quadrat "Skills" über die linke untere Ecke des Bildes */
+.skills-title-box {
+    position: absolute;
+    bottom: 70px; /* Setzt die Box unterhalb der unteren Kante des Bildes */
+    right: 540px; /* Verschiebt die Box nach links, sodass sie die linke Seite des Bildes berührt */
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 2px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Abgerundete Ecken */
+    z-index: 10; /* Sicherstellen, dass es über dem Bild liegt */
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.skills-back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Grüne Hintergrundfarbe */
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.skills-back-button:hover {
+    background-color: #45a049; /* Dunkleres Grün bei Hover */
+}
