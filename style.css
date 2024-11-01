@@ -550,3 +550,139 @@ body, html {
 .skills-back-button:hover {
     background-color: #45a049; /* Dunkleres Grün bei Hover */
 }
+
+/*NEU*/
+.fact-container {
+    text-align: center; /* Zentriert den Titel */
+    margin: 20px 0; /* Abstand oben und unten */
+}
+
+.fact-title {
+    font-size: 2em; /* Größe des Titels */
+    color: rgb(155, 56, 56); /* Textfarbe */
+    margin-bottom: 10px; /* Abstand zwischen Titel und Balken */
+}
+
+.fact-bar {
+    width: 100%;
+    max-width: 100%; /* Größere Breite für den Balken */
+    height: 200px; /* Erhöhte Höhe für das rechteckige Aussehen */
+    background-color: #333;
+    color: white;
+    font-size: 1.5em; /* Größere Schriftgröße für bessere Sichtbarkeit */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 20px auto; /* Zentriert den Balken */
+    position: relative; /* Ermöglicht die absolute Positionierung des Textes */
+}
+
+.fact-text {
+    position: absolute;
+    white-space: nowrap;
+    transform: translateX(-100%); /* Start außerhalb des Bildschirms links */
+    opacity: 0; /* Start mit unsichtbarem Text */
+    transition: opacity 0.5s ease; /* Übergang für die Sichtbarkeit */
+}
+
+.slide-in {
+    animation: slideIn 1s forwards; /* Einblenden */
+}
+
+.slide-out {
+    animation: slideOut 1s forwards; /* Ausblenden */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%); /* Start links außerhalb */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Text ist vollständig sichtbar */
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0); /* Text bleibt in der Mitte */
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%); /* Text bewegt sich nach rechts heraus */
+        opacity: 0; /* Text verschwindet */
+    }
+}
+
+/*-----------------------------------------------Kontakformular--------------------------------------------------*/
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 1000px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-image {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-image img {
+    width: 80%; /* Passt die Bildgröße an */
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form {
+    flex: 2;
+    padding: 20px;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+.contact-form textarea {
+    resize: none; /* Deaktiviert die Größenänderung */
+}

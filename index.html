@@ -116,5 +116,40 @@
             </div>
         </div>
     </div>
+     
+ <!-- Random facts about me-->
+    <div class="fact-container">
+        <h2 class="fact-title">Random facts about me</h2>
+        <div class="fact-bar">
+            <div id="factText" class="fact-text"></div>
+        </div>
+    </div>
+
+<!-- Kontaktformular -->
+<div class="contact-container">
+    <div class="contact-image">
+        <img src="dein_bild.jpg" alt="Kontakt Bild">
+    </div>
+    <div class="contact-form">
+        <h2>Kontakt aufnehmen</h2>
+        <form action="send_message.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-Mail-Adresse:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Nachricht:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Anfrage senden</button>
+        </form>
+    </div>
+</div>
+
+
+
+
 </body>
 </html>
+

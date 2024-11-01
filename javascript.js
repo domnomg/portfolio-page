@@ -83,11 +83,45 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-//Neue Funktion hier einfügen -----------------------------------------
+//Random Facts abut me
+const facts = [
+    "Ich liebe es, zu surfen.",
+    "Ich bin im 5. Semester meines Studiums.",
+    "Ich interessiere mich für künstliche Intelligenz.",
+    "Ich wohne in Bern.",
+    "Ich habe Erfahrung in Projektmanagement und Agilität."
+];
 
+let currentFactIndex = 0;
+
+function showNextFact() {
+    const factText = document.getElementById("factText");
+    factText.classList.remove('slide-in', 'slide-out'); // Entferne vorherige Animationen
+
+    // Setzt den neuen Fakttext
+    factText.innerText = facts[currentFactIndex];
+    currentFactIndex = (currentFactIndex + 1) % facts.length;
+
+    // Füge die Animationen hinzu
+    setTimeout(() => {
+        factText.classList.add('slide-in');
+    }, 100); // Kurze Verzögerung vor dem Einblenden
+
+    // Entferne die Animation nach einer bestimmten Zeit
+    setTimeout(() => {
+        factText.classList.remove('slide-in');
+        factText.classList.add('slide-out');
+    }, 4000); // 4 Sekunden bis zur Ausblendung
+}
+
+// Führt die Anzeige alle 5 Sekunden aus
+setInterval(showNextFact, 5000);
+
+// Startet die Anzeige mit dem ersten Fakt
+showNextFact();
  
 
-
+//Neue Funktion hier einfügen -----------------------------------------
 
 
 
