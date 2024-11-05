@@ -14,7 +14,6 @@ window.addEventListener('scroll', function() {
 
 
 
-
 //ANIMATION, die macht, dass das Titelbild verschwindet sobald man beim "A little about me ankommt"
 document.addEventListener("DOMContentLoaded", function () {
     // Alle Timeline-Container-Elemente sammeln
@@ -85,11 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Random Facts abut me
 const facts = [
-    "Ich liebe es, zu surfen.",
-    "Ich bin im 5. Semester meines Studiums.",
-    "Ich interessiere mich für künstliche Intelligenz.",
-    "Ich wohne in Bern.",
-    "Ich habe Erfahrung in Projektmanagement und Agilität."
+    "My favourite surf spot is in Lombok - Indonesia",
+    "I'm more afraid of jellyfish than sharks",
+    "My favourite food is sushi",
+    "I favour cats over dogs",
+    "My dream is to obtain a private pilot's licence (PPL)",
 ];
 
 let currentFactIndex = 0;
@@ -118,12 +117,47 @@ function showNextFact() {
 setInterval(showNextFact, 5000);
 
 // Startet die Anzeige mit dem ersten Fakt
-showNextFact();
+//showNextFact();
  
 
 //Neue Funktion hier einfügen -----------------------------------------
 
 
+async function getAccessToken() {
+    const clientId = '83ab3312185444989c46192a341bcece'; // Ersetze mit deinem Client ID
+    const clientSecret = '70dfd88cd572442a959aeba6b04cbed9'; // Ersetze mit deinem Client Secret
+
+    const tokenUrl = 'https://accounts.spotify.com/api/token';
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+    const body = new URLSearchParams();
+    body.append('grant_type', 'client_credentials');
+    body.append('client_id', clientId);
+    body.append('client_secret', clientSecret);
+console.log(body)
+    try {
+        const response = await fetch(tokenUrl, {
+            method: 'POST',
+            headers: headers,
+            body: body
+        });
+
+        if (!response.ok) throw new Error('Token Request Failed');
+
+        const data = await response.json();
+        const accessToken = data.access_token;
+        
+        console.log('Access Token:', accessToken);
+        return accessToken;
+
+    } catch (error) {
+        console.error('Error fetching the access token:', error);
+    }
+}
+
+// Aufruf der Funktion
+getAccessToken();
 
 
 

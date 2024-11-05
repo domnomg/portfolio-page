@@ -16,7 +16,7 @@ body, html {
 /* Linke Bildseite */
 .image-section {
     width: 50%;
-    background-image: url('Titelbild.jpg');
+    background-image: url('Titelbild.jpg'); /*Source Picture: itsonlywater */
     background-size: cover;
     background-position: center;
 }
@@ -54,7 +54,7 @@ body, html {
 .about-container {
     display: flex;
     justify-content: space-between;
-    padding:50px;
+    padding:5%; /*50 px vorher*/
     margin-top: 1cm; /* Abstand von 5cm vom Titelbild */
     background-color: white;
 }
@@ -551,70 +551,73 @@ body, html {
     background-color: #45a049; /* Dunkleres Grün bei Hover */
 }
 
-/*NEU*/
+/*----------------------------------------------Random facts------------------------------------------*/
 .fact-container {
-    text-align: center; /* Zentriert den Titel */
-    margin: 20px 0; /* Abstand oben und unten */
+    text-align: center;
+    margin: 20px 0;
 }
 
 .fact-title {
-    font-size: 2em; /* Größe des Titels */
-    color: rgb(155, 56, 56); /* Textfarbe */
-    margin-bottom: 10px; /* Abstand zwischen Titel und Balken */
+    font-size: 2em;
+    color: rgb(155, 56, 56);
+    margin-bottom: 10px;
 }
 
 .fact-bar {
     width: 100%;
-    max-width: 100%; /* Größere Breite für den Balken */
-    height: 200px; /* Erhöhte Höhe für das rechteckige Aussehen */
+    max-width: 100%; /* Breite auf 100% angepasst, um die volle Breite zu nutzen */
+    height: 200px;
     background-color: #333;
     color: white;
-    font-size: 1.5em; /* Größere Schriftgröße für bessere Sichtbarkeit */
+    font-size: 1.5em;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin: 20px auto; /* Zentriert den Balken */
-    position: relative; /* Ermöglicht die absolute Positionierung des Textes */
+    margin: 20px auto;
+    position: relative;
 }
 
 .fact-text {
-    position: absolute;
-    white-space: nowrap;
-    transform: translateX(-100%); /* Start außerhalb des Bildschirms links */
-    opacity: 0; /* Start mit unsichtbarem Text */
-    transition: opacity 0.5s ease; /* Übergang für die Sichtbarkeit */
+    white-space: nowrap; /* Verhindert Zeilenumbruch, damit der Text einheitlich bleibt */
+    overflow: hidden;
+    opacity: 0; /* Startet unsichtbar */
+    transform: translateX(-100%); /* Startet außerhalb des Bildschirms links */
+    transition: opacity 1s ease, transform 1s ease; /* Übergangseffekte für eine flüssige Animation */
 }
 
 .slide-in {
-    animation: slideIn 1s forwards; /* Einblenden */
+    opacity: 1;
+    transform: translateX(0); /* Text bewegt sich in die Mitte */
 }
 
 .slide-out {
-    animation: slideOut 1s forwards; /* Ausblenden */
+    opacity: 0;
+    transform: translateX(100%); /* Text bewegt sich nach rechts hinaus */
 }
 
 @keyframes slideIn {
     0% {
-        transform: translateX(-100%); /* Start links außerhalb */
+        transform: translateX(-100%);
         opacity: 0;
     }
     100% {
-        transform: translateX(0); /* Text ist vollständig sichtbar */
+        transform: translateX(0);
         opacity: 1;
     }
 }
 
 @keyframes slideOut {
     0% {
-        transform: translateX(0); /* Text bleibt in der Mitte */
+        transform: translateX(0);
         opacity: 1;
     }
     100% {
-        transform: translateX(100%); /* Text bewegt sich nach rechts heraus */
-        opacity: 0; /* Text verschwindet */
+        transform: translateX(100%);
+        opacity: 0;
     }
 }
+
 
 /*-----------------------------------------------Kontakformular--------------------------------------------------*/
 .contact-container {
@@ -685,4 +688,9 @@ body, html {
 }
 .contact-form textarea {
     resize: none; /* Deaktiviert die Größenänderung */
+}
+
+/*---------------------------------------Verhindert horizontales scollen-----------------------------*/
+body {
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
