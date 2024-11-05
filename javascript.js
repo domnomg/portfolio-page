@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Random Facts abut me
 const facts = [
-    "My favourite surf spot is in Lombok - Indonesia",
     "I'm more afraid of jellyfish than sharks",
     "My favourite food is sushi",
     "I favour cats over dogs",
@@ -125,7 +124,7 @@ setInterval(showNextFact, 5000);
 
 async function getAccessToken() {
     const clientId = '83ab3312185444989c46192a341bcece'; // Ersetze mit deinem Client ID
-    const clientSecret = '70dfd88cd572442a959aeba6b04cbed9'; // Ersetze mit deinem Client Secret
+    const clientSecret = '-'; // Ersetze mit deinem Client Secret
 
     const tokenUrl = 'https://accounts.spotify.com/api/token';
     const headers = new Headers();
