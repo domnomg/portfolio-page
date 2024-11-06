@@ -16,7 +16,7 @@ body, html {
 /* Linke Bildseite */
 .image-section {
     width: 50%;
-    background-image: url('Titelbild.jpg'); /*Source Picture: itsonlywater */
+    background-image: url('Titelbild.jpg'); /* Source Picture: itsonlywater */
     background-size: cover;
     background-position: center;
 }
@@ -25,44 +25,140 @@ body, html {
 .text-section {
     width: 50%;
     background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 /* Titel PORTFOLIO DOMINIQUE */
 .title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 54px;
     color: black;
     text-align: center;
     z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .portfolio, .name {
     display: inline-block;
-    transition: transform 0.1s ease-out; /* Für flüssigere Bewegung */
+    transition: transform 0.1s ease-out;
 }
 
-/* Textbereich */
-.text-section {
-    text-align: center;
+/* Icons */
+.social-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Styling für die Social Media Icons */
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Responsive Design für Tablets */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-section, .text-section {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .image-section {
+        padding-top: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .title {
+        font-size: 36px;
+        padding: 0 20px;
+        position: static;
+        transform: none;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    /* Zentrieren der Icons unterhalb des Titels */
+    .social-container {
+        position: static;
+        justify-content: center;
+        padding-top: 10px;
+        width: 100%;
+        margin-top: -10px; /* Reduziert den Abstand zwischen Icons und Titel */
+    }
+}
+
+/* Responsive Design für Smartphones */
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-section, .text-section {
+        width: 100%;
+        height: 45vh;
+    }
+
+    .image-section {
+        padding-top: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .title {
+        font-size: 28px;
+        padding: 0 15px;
+        position: static;
+        transform: none;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    /* Zentrieren der Icons unterhalb des Titels */
+    .social-container {
+        position: static;
+        justify-content: center;
+        padding-top: 5px;
+        width: 100%;
+        margin-top: -5px; /* Noch geringerer Abstand zum Titel */
+    }
 }
 
 /*_______________________________A little about me____________________________________*/
-
 /* Gesamtcontainer für "A little about me" */
 .about-container {
     display: flex;
     justify-content: space-between;
-    padding:5%; /*50 px vorher*/
-    margin-top: 1cm; /* Abstand von 5cm vom Titelbild */
+    padding: 5%;
+    margin-top: 1cm;
     background-color: white;
 }
 
 /* Linke Seite: Titel und Text */
 .about-left {
     width: 30%;
-    text-align: left; /* Linksbündige Ausrichtung */
+    text-align: left;
 }
 
 /* Titel "A little about me" */
@@ -76,12 +172,12 @@ body, html {
 
 /* Beschreibungstext unter dem Titel */
 .about-description {
-    font-family: 'Aptos Textkörper', sans-serif; 
+    font-family: 'Aptos Textkörper', sans-serif;
     font-size: 15px;
     line-height: 1.6;
     color: #333;
-    text-align: left; /* Linksbündige Ausrichtung */
-    transform: translateX(140px); 
+    text-align: left;
+    transform: translateX(140px);
 }
 
 /* Rechte Seite: Bilder */
@@ -95,22 +191,78 @@ body, html {
 
 /* Fancybild_P22 */
 .about-image-small {
-    width: 40%; /* Verkleinertes Profilbild */
-    transform: rotate(-15deg); /* Rotation */
+    width: 50%;
+    transform: rotate(-15deg);
     position: absolute;
-    top: -20px; /*Verschiebt das Bild weiter nach oben*/
-    left: -35%; /* Linksorientiert */
+    top: -30px;
+    left: -35%;
     z-index: 2;
 }
 
 /* Profilbild_P2 */
 .about-image-large {
-    width: 60%; /* Kleineres zweites Bild */
+    width: 70%;
     position: absolute;
     top: 5px;
     left: 20px;
     z-index: 1;
 }
+
+/* ---------------------------------Responsive Design für Tablets und kleinere Bildschirme------------------------ */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Spaltenlayout für kleinere Bildschirme */
+        align-items: center; /* Zentriert den gesamten Inhalt */
+        text-align: center;
+    }
+
+    .about-left, .about-right {
+        width: 100%; /* Volle Breite für Titel, Text und Bilder */
+        text-align: center; /* Zentriert Text bei kleineren Bildschirmen */
+    }
+
+    /* Zentrierung und Skalierung des Titels */
+    .about-title {
+        font-size: 28px; /* Etwas kleinere Schriftgröße für Tablets */
+        padding-left: 0; /* Entfernt die linke Einrückung */
+        margin-bottom: 15px;
+    }
+
+    /* Zentrierung und Skalierung des Textes */
+    .about-description {
+        font-size: 14px; /* Etwas kleinere Schriftgröße für Tablets */
+        text-align: center;
+        margin: 0 10px 20px 10px;
+        transform: none; /* Entfernt das Verschieben nach rechts */
+    }
+
+    /* Anpassung der Bilder */
+    .about-image-small, .about-image-large {
+        width: 30%; /* Verkleinert die Bilder */
+        position: static; /* Entfernt die absolute Positionierung */
+        transform: rotate(0deg); /* Rotation entfernen */
+        margin: 10px 0; /* Abstände zwischen den Bildern */
+    }
+}
+
+/* ---------------------------------Responsive Design für Smartphones------------------------ */
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 24px;
+    }
+
+    .about-description {
+        font-size: 13px;
+        padding: 0 5%;
+    }
+
+    /* Anpassung der Bilder auf kleine Bildschirme */
+    .about-image-small, .about-image-large {
+        width: 70%; /* Verkleinert die Bilder weiter für Smartphones */
+        margin: 10px 0;
+    }
+}
+
 
 /* ______________________________________Buttons_____________________________________ */
 .content-section {
@@ -153,7 +305,6 @@ body, html {
     font-size: 18px;
     color: #666;
   }
-
 
 /* _______________________________TIMELINE_____________________________________________ */
 .timeline {
@@ -293,37 +444,112 @@ body, html {
     }
 }
 
-/* _________________________________________CSS für html Projects___________________________________________________ */
+/*----------------------------------------------Random facts------------------------------------------*/
+.fact-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.fact-title {
+    font-size: 2em;
+    color: rgb(155, 56, 56);
+    margin-bottom: 10px;
+}
+
+.fact-bar {
+    width: 100%;
+    max-width: 100%; /* Breite auf 100% angepasst, um die volle Breite zu nutzen */
+    height: 200px;
+    background-color: #333;
+    color: white;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 20px auto;
+    position: relative;
+}
+
+.fact-text {
+    white-space: nowrap; /* Verhindert Zeilenumbruch, damit der Text einheitlich bleibt */
+    overflow: hidden;
+    opacity: 0; /* Startet unsichtbar */
+    transform: translateX(-100%); /* Startet außerhalb des Bildschirms links */
+    transition: opacity 1s ease, transform 1s ease; /* Übergangseffekte für eine flüssige Animation */
+}
+
+.slide-in {
+    opacity: 1;
+    transform: translateX(0); /* Text bewegt sich in die Mitte */
+}
+
+.slide-out {
+    opacity: 0;
+    transform: translateX(100%); /* Text bewegt sich nach rechts hinaus */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+/* ______________________________________________________________________CSS für html Projects________________________________________________________________________________________ */
 /* Hauptcontainer */
 .projects-container {
     display: flex;
-    width: 95%;
-    height: 95vh;
-    justify-content: space-between;
-    padding: 0 50px; /* Gleicher Abstand von links und rechts */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto; /* Dynamische Höhe für bessere Darstellung */
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 40px; /* Abstand zwischen Bild und Boxen */
 }
 
 /* Linke Seite: Bild mit abgerundeten Ecken */
 .left-section {
     width: 40%;
-    position: relative; /* Erforderlich für das überlagernde Quadrat */
+    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 60px;
 }
 
+/* Bild in quadratischer Form */
 .rounded-image {
-    width: 100%;
-    height: 430px; /* Höhe entsprechend der Höhe von zwei Boxen plus Abstand */
+    width: 400px;
+    height: 400px;
     border-radius: 15px;
-    object-fit: cover; /* Verhindert Verzerrung des Bildes */
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 /* Quadrat "Projects" */
 .project-title-box {
     position: absolute;
-    bottom: 55px;
-    right: -25px;
+    bottom: 50px;
+    right: 10px;
     width: 100px;
     height: 100px;
     background-color: white;
@@ -331,31 +557,52 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px; /* Abgerundete Ecken */
-    z-index: 10; /* Sicherstellen, dass es über dem Bild liegt */
+    border-radius: 10px;
+    z-index: 10;
     font-size: 10px;
     font-weight: bold;
 }
 
-/* Rechte Seite: 6 quadratische Boxen */
+/* Zurück-Button */
+.back-button {
+    display: inline-block;
+    position: relative;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.back-button:hover {
+    background-color: #080808;
+}
+
+/* Rechte Seite: Boxen */
 .right-section {
-    width: 70%;
+    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px; 
 }
 
+/* Box-Container */
 .box-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Boxen nebeneinander */
-    grid-gap: 30px; /* Größerer Abstand zwischen den Boxen */
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
 }
 
+/* Flip-Box-Stil */
 .flip-box {
     background-color: white;
     width: 200px;
-    height: 200px;
-    perspective: 1000px; /* Perspektive für den 3D-Effekt */
+    height: 215px;
+    perspective: 1000px;
 }
 
 .flip-box-inner {
@@ -368,7 +615,7 @@ body, html {
 }
 
 .flip-box:hover .flip-box-inner {
-    transform: rotateY(180deg); /* Box dreht sich bei Hover */
+    transform: rotateY(180deg);
 }
 
 .flip-box-front, .flip-box-back {
@@ -376,11 +623,11 @@ body, html {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border: 2px solid gray; /* Grauer Rand */
+    border: 2px solid gray;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px; /* Abgerundete Ecken */
+    border-radius: 10px;
 }
 
 .flip-box-front {
@@ -394,66 +641,86 @@ body, html {
     transform: rotateY(180deg);
 }
 
-/* ____________________________________ZURÜCKBUTTON Linke Seite: Bild mit abgerundeten Ecken_____________________________ */
-.left-section {
-    width: 40%;
-    position: relative; /* Erforderlich für die Platzierung des Buttons */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* ---------------- Media Queries für Responsive Design ---------------- */
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .rounded-image {
+        width: 80%;
+        height: auto; /* Höhe an Bildbreite anpassen */
+    }
+
+    .project-title-box {
+        width: 80px;
+        height: 80px;
+        font-size: 9px;
+        bottom: 30px;
+        right: 0;
+    }
+
+    .box-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 Boxen nebeneinander auf Tablets */
+        grid-gap: 20px;
+        width: 100%;
+    }
+
+    .flip-box {
+        height: 180px;
+    }
 }
 
-.rounded-image {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    object-fit: cover;
-}
+/* Smartphones (max-width: 480px) */
+@media (max-width: 480px) {
+    .projects-container {
+        padding: 10px;
+        align-items: center;
+        gap: 15px;
+    }
 
-/* Zurück-Button */
-.back-button {
-    position: absolute;
-    bottom: 20px;
-    left: 0; /* Positioniert den Button genau auf die Linie des linken Randes des Bildes */
-    background-color: #4CAF50; /* Grüne Hintergrundfarbe */
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
-}
+    .left-section, .right-section {
+        width: 100%;
+        padding-top: 0;
+    }
 
-.back-button:hover {
-    background-color: #45a049; /* Dunkleres Grün bei Hover */
-}
+    .rounded-image {
+        width: 90%;
+        height: auto;
+    }
 
-/*_______________________Icons_____________________________________*/
+    .project-title-box {
+        width: 70px;
+        height: 70px;
+        font-size: 8px;
+        bottom: 20px;
+        right: 0;
+    }
 
-/* Container für die Social Media Icons oben rechts */
-.social-container {
-    position: fixed; /* Verhindert, dass sich die Icons beim Scrollen bewegen */
-    top: 20px; /* Icons werden oben positioniert */
-    right: 20px; /* Icons werden rechts positioniert */
-    display: flex; /* Waagerechte Ausrichtung der Icons */
-    flex-direction: row; /* Icons in einer Reihe */
-    gap: 40px; /* Abstand zwischen den Icons */
-    align-items: center;
-    z-index: 1000; /* Stellt sicher, dass die Icons über allem anderen bleiben */
-}
+    .box-container {
+        grid-template-columns: 1fr; /* 1 Box pro Zeile auf Smartphones */
+        grid-gap: 15px;
+        width: 100%;
+    }
 
-/* Styling für die Social Media Icons */
-.social-icon {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    .flip-box {
+        height: 150px;
+    }
 
-/* Bildergröße für die Icons */
-.icon {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
+    .back-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
 }
 
 /* _________________________________________CSS für skills.html___________________________________________________ */
@@ -475,6 +742,7 @@ body, html {
     flex-direction: column;
     justify-content: center;
     padding-right: 20px;
+    padding-top: 40px; 
 }
 
 .skills-left-section h1 {
@@ -494,7 +762,7 @@ body, html {
     top: -35px;
 }
 
-/* Rechte Seite: Bild mit abgerundeten Ecken und Social Media Icons */
+/* Rechte Seite: Bild mit abgerundeten Ecken */
 .skills-right-section {
     width: 40%;
     position: relative;
@@ -502,6 +770,7 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 40px; 
 }
 
 /* Quadratische Form des Bildes */
@@ -598,73 +867,21 @@ body, html {
 }
 
 
-/*----------------------------------------------Random facts------------------------------------------*/
-.fact-container {
-    text-align: center;
-    margin: 20px 0;
+/*_______________________________Spotify_________________________________________________________________*/
+.spotify-container {
+    width: 500px; /* Breitere Größe */
+    height: 400px; /* Beibehaltung der Höhe */
+    margin: 20px auto; /* Zentriert das Element */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.fact-title {
-    font-size: 2em;
-    color: rgb(155, 56, 56);
-    margin-bottom: 10px;
-}
-
-.fact-bar {
+.spotify-container iframe {
     width: 100%;
-    max-width: 100%; /* Breite auf 100% angepasst, um die volle Breite zu nutzen */
-    height: 200px;
-    background-color: #333;
-    color: white;
-    font-size: 1.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin: 20px auto;
-    position: relative;
+    height: 100%;
+    border: none; /* Entfernt eventuelle Rahmen */
 }
-
-.fact-text {
-    white-space: nowrap; /* Verhindert Zeilenumbruch, damit der Text einheitlich bleibt */
-    overflow: hidden;
-    opacity: 0; /* Startet unsichtbar */
-    transform: translateX(-100%); /* Startet außerhalb des Bildschirms links */
-    transition: opacity 1s ease, transform 1s ease; /* Übergangseffekte für eine flüssige Animation */
-}
-
-.slide-in {
-    opacity: 1;
-    transform: translateX(0); /* Text bewegt sich in die Mitte */
-}
-
-.slide-out {
-    opacity: 0;
-    transform: translateX(100%); /* Text bewegt sich nach rechts hinaus */
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideOut {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-}
-
 
 /*-----------------------------------------------Kontakformular--------------------------------------------------*/
 .contact-container {
@@ -740,21 +957,4 @@ body, html {
 /*---------------------------------------Verhindert horizontales scollen-----------------------------*/
 body {
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
-}
-
-
-/*_______________________________-Spotify__________________________*/
-.spotify-container {
-    width: 500px; /* Breitere Größe */
-    height: 400px; /* Beibehaltung der Höhe */
-    margin: 20px auto; /* Zentriert das Element */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.spotify-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none; /* Entfernt eventuelle Rahmen */
 }

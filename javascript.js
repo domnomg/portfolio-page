@@ -119,44 +119,4 @@ setInterval(showNextFact, 5000);
 //showNextFact();
  
 
-//Neue Funktion hier einfügen -----------------------------------------
-
-
-async function getAccessToken() {
-    const clientId = '83ab3312185444989c46192a341bcece'; // Ersetze mit deinem Client ID
-    const clientSecret = '-'; // Ersetze mit deinem Client Secret
-
-    const tokenUrl = 'https://accounts.spotify.com/api/token';
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-    const body = new URLSearchParams();
-    body.append('grant_type', 'client_credentials');
-    body.append('client_id', clientId);
-    body.append('client_secret', clientSecret);
-console.log(body)
-    try {
-        const response = await fetch(tokenUrl, {
-            method: 'POST',
-            headers: headers,
-            body: body
-        });
-
-        if (!response.ok) throw new Error('Token Request Failed');
-
-        const data = await response.json();
-        const accessToken = data.access_token;
-        
-        console.log('Access Token:', accessToken);
-        return accessToken;
-
-    } catch (error) {
-        console.error('Error fetching the access token:', error);
-    }
-}
-
-// Aufruf der Funktion
-getAccessToken();
-
-
-
+//Neue Funktion hier einfügen#############################
