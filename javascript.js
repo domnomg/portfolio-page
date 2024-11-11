@@ -120,3 +120,5 @@ setInterval(showNextFact, 5000);
  
 
 //Neue Funktion hier einfügen#############################
+
+

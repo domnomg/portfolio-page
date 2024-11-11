@@ -264,39 +264,86 @@ body, html {
 }
 
 
-/* ______________________________________Buttons_____________________________________ */
+/* ___________________________________________________________________________Buttons_____________________________________________________________________________________________ */
 .content-section {
     display: flex;
     justify-content: center; /* Zentriert die Buttons */
     padding: 20px;
 }
 
-/* Buttons */
 .btn {
-    background-color: white;
-    border: 1px solid gray;
+    background-color: #f4f4f4; 
     color: black;
-    border-radius: 5px;
-    padding: 10px;
+    border: none; 
+    border-radius: 10px; 
+    padding: 10px 20px;
     margin-top: 10px;
     cursor: pointer;
-    width: 150px; /* Angepasste Breite für die Buttons */
+    width: 150px; 
     font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    text-align: center;
 }
 
 .btn:hover {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
 }
 
 
-/*_____________________________Titel für Timeline_______________________________*/
+/* Tablet-Ansicht (maximale Breite 768px) */
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column; /* Buttons untereinander anordnen */
+        align-items: center; /* Buttons zentrieren */
+    }
+
+    .btn {
+        width: 70%; /* Buttons nehmen 70% der Bildschirmbreite ein */
+        font-size: 14px; /* Leicht kleinere Schriftgröße */
+        padding: 12px; /* Etwas mehr Innenabstand für größere Klickfläche */
+        margin-top: 15px; /* Etwas größerer Abstand zwischen den Buttons */
+        text-align: center; /* Text im Button zentrieren */
+    }
+}
+
+/* Mobile-Ansicht (maximale Breite 480px) */
+@media (max-width: 480px) {
+    .content-section {
+        display: flex;
+        flex-direction: column; /* Buttons untereinander anordnen */
+        align-items: center; /* Buttons horizontal zentrieren */
+        padding: 10px; /* Padding für besseren Look auf kleinen Bildschirmen */
+    }
+
+    .buttons {
+        display: flex; /* Flexbox für die Buttons */
+        flex-direction: row; /* Buttons nebeneinander anordnen */
+        justify-content: center; /* Buttons horizontal zentrieren */
+        gap: 10px; /* Abstand zwischen den Buttons */
+        width: 100%; /* Breite auf 100% setzen */
+    }
+
+    .btn {
+        width: 45%; /* Reduzierte Breite, damit zwei Buttons nebeneinander passen */
+        font-size: 14px; /* Kleinere Schriftgröße */
+        padding: 10px; /* Angemessenes Padding für mobile Ansicht */
+        text-align: center; /* Zentriert den Text im Button */
+    }
+}
+
+
+/*________________________________________________________________________________________________Titel für Timeline_______________________________________________________________*/
 .timeline-header {
     text-align: center;
     margin-bottom: 20px;
+    margin-top: -20px; /* Verschiebt Titel und Untertitel nach oben */
   }
   
   .timeline-title {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
     margin-bottom: 10px;
   }
@@ -444,7 +491,7 @@ body, html {
     }
 }
 
-/*----------------------------------------------Random facts------------------------------------------*/
+/*___________________________________________________________________________Random facts___________________________________________________________________________________*/
 .fact-container {
     text-align: center;
     margin: 20px 0;
@@ -452,7 +499,7 @@ body, html {
 
 .fact-title {
     font-size: 2em;
-    color: rgb(155, 56, 56);
+    color: rgb(0, 0, 0);
     margin-bottom: 10px;
 }
 
@@ -511,18 +558,22 @@ body, html {
     }
 }
 /* ______________________________________________________________________CSS für html Projects________________________________________________________________________________________ */
-/* Hauptcontainer */
+
 .projects-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
-    height: auto; /* Dynamische Höhe für bessere Darstellung */
-    padding: 20px;
+    height: auto;
+    padding-top: 70px;
+    padding-left: 40px;
+    padding-right: 40px;
     box-sizing: border-box;
-    gap: 40px; /* Abstand zwischen Bild und Boxen */
+    gap: 40px;
 }
+
+
 
 /* Linke Seite: Bild mit abgerundeten Ecken */
 .left-section {
@@ -530,37 +581,70 @@ body, html {
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-left: -10px;
+
+}
+
+/* Rechte Seite: Boxen */
+.right-section {
+    width: 60%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 60px;
 }
 
-/* Bild in quadratischer Form */
-.rounded-image {
-    width: 400px;
-    height: 400px;
-    border-radius: 15px;
-    object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+/* Box-Container */
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Boxen pro Zeile auf größeren Bildschirmen */
+    grid-gap: 20px;
 }
 
-/* Quadrat "Projects" */
-.project-title-box {
-    position: absolute;
-    bottom: 50px;
-    right: 10px;
-    width: 100px;
-    height: 100px;
+/* Flip-Box-Stil */
+.flip-box {
     background-color: white;
-    border: 2px solid gray;
+    width: 200px;
+    height: 215px;
+    perspective: 1000px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    z-index: 10;
-    font-size: 10px;
-    font-weight: bold;
+}
+
+.flip-box-front {
+    background-color: #f4f4f4;
+    color: black;
+}
+
+.flip-box-back {
+    background-color: #f0f0f0;
+    color: black;
+    transform: rotateY(180deg);
 }
 
 /* Zurück-Button */
@@ -581,103 +665,65 @@ body, html {
     background-color: #080808;
 }
 
-/* Rechte Seite: Boxen */
-.right-section {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px; 
-}
-
-/* Box-Container */
-.box-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-}
-
-/* Flip-Box-Stil */
-.flip-box {
-    background-color: white;
-    width: 200px;
-    height: 215px;
-    perspective: 1000px;
-}
-
-.flip-box-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-.flip-box:hover .flip-box-inner {
-    transform: rotateY(180deg);
-}
-
-.flip-box-front, .flip-box-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border: 2px solid gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-}
-
-.flip-box-front {
-    background-color: white;
-    color: black;
-}
-
-.flip-box-back {
-    background-color: #f0f0f0;
-    color: black;
-    transform: rotateY(180deg);
-}
-
 /* ---------------- Media Queries für Responsive Design ---------------- */
 
-/* Tablets (max-width: 768px) */
-@media (max-width: 768px) {
+/* Für kleinere Bildschirme, die immer noch genug Platz für 3 Boxen haben */
+@media (max-width: 1024px) {
     .projects-container {
-        flex-direction: column;
-        padding: 20px;
+        flex-direction: column; /* Stapelt Bild und Boxen untereinander */
         align-items: center;
+        padding: 20px;
         gap: 20px;
     }
 
-    .left-section, .right-section {
-        width: 100%;
-        padding-top: 0;
+    .left-section {
+        width: 80%; /* Breitere Darstellung für das Bild */
+    }
+
+    .right-section {
+        width: 100%; /* Volle Breite für die Boxen */
     }
 
     .rounded-image {
         width: 80%;
-        height: auto; /* Höhe an Bildbreite anpassen */
-    }
-
-    .project-title-box {
-        width: 80px;
-        height: 80px;
-        font-size: 9px;
-        bottom: 30px;
-        right: 0;
+        height: auto;
     }
 
     .box-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 Boxen nebeneinander auf Tablets */
+        grid-template-columns: repeat(2, 1fr); /* 2 Boxen nebeneinander */
         grid-gap: 20px;
         width: 100%;
+        justify-items: center;
+    }
+}
+
+/* Kleinere Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column; /* Stapelt Bild und Boxen untereinander */
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
     }
 
-    .flip-box {
-        height: 180px;
+    .left-section {
+        width: 100%; /* Volle Breite für das Bild */
+    }
+
+    .right-section {
+        width: 100%; /* Volle Breite für die Boxen */
+    }
+
+    .rounded-image {
+        width: 80%;
+        height: auto;
+    }
+
+    .box-container {
+        grid-template-columns: 1fr; /* Eine Box pro Zeile */
+        grid-gap: 20px;
+        width: 100%;
+        justify-items: center;
     }
 }
 
@@ -690,8 +736,7 @@ body, html {
     }
 
     .left-section, .right-section {
-        width: 100%;
-        padding-top: 0;
+        width: 100%; /* Volle Breite für beide Sektionen */
     }
 
     .rounded-image {
@@ -699,67 +744,57 @@ body, html {
         height: auto;
     }
 
-    .project-title-box {
-        width: 70px;
-        height: 70px;
-        font-size: 8px;
-        bottom: 20px;
-        right: 0;
-    }
-
     .box-container {
-        grid-template-columns: 1fr; /* 1 Box pro Zeile auf Smartphones */
+        grid-template-columns: 1fr; /* Eine Box pro Zeile */
         grid-gap: 15px;
         width: 100%;
-    }
-
-    .flip-box {
-        height: 150px;
-    }
-
-    .back-button {
-        font-size: 14px;
-        padding: 8px 15px;
+        justify-items: center;
     }
 }
 
-/* _________________________________________CSS für skills.html___________________________________________________ */
+/* ________________________________________________________________________________________CSS für skills.html___________________________________________________________________________ */
 /* Hauptcontainer für Skills Seite */
 .skills-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 95%;
-    justify-content: space-between;
-    padding: 50px;
+    width: 100%;
+    justify-content: center;
+    padding-top: 70px;
+    padding-left: 40px; /* Gleichmäßiger Abstand links und rechts */
+    padding-right: 40px;
     box-sizing: border-box;
+    gap: 40px;
 }
+
+.skills-right-section h1 {
+    font-size: 22px; /* Passe die Schriftgröße nach Wunsch an */
+    color: #333;
+    margin-top: 10px; /* Optional: Abstand über dem Titel */
+    text-align: center;
+    padding-top: 10px;
+}
+
 
 /* Linke Seite: Titel, Untertitel und Textblöcke */
 .skills-left-section {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 40px; /* Fügt Abstand vom linken Rand hinzu */
     padding-right: 20px;
-    padding-top: 40px; 
+    margin-top: 70px; /* Schiebt den gesamten Abschnitt weiter nach oben */
+    position: relative; /* Ermöglicht absolute Positionierung des Titels */
 }
 
-.skills-left-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #333;
-    position: relative;
-    top: -60px;
-}
-
+/* Absatz (p) weiter oben positioniert und mit größeren Abständen */
 .skills-left-section p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 25px; /* Vergrößert den Abstand zwischen Absätzen */
+    line-height: 1.8; /* Erhöht den Zeilenabstand für bessere Lesbarkeit */
     color: #666;
-    position: relative;
-    top: -35px;
+    margin-top: -10px; /* Schiebt den ersten Absatz leicht nach oben */
 }
 
 /* Rechte Seite: Bild mit abgerundeten Ecken */
@@ -768,9 +803,8 @@ body, html {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding-top: 40px; 
+    padding-top: 0; /* Kein zusätzlicher Abstand, der Container sorgt dafür */
 }
 
 /* Quadratische Form des Bildes */
@@ -780,7 +814,7 @@ body, html {
     border-radius: 15px;
     object-fit: cover;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Einheitlicher Abstand zum Back-Button */
 }
 
 /* Zurück-Button */
@@ -793,7 +827,7 @@ body, html {
     font-size: 16px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    margin-top: 20px;
+    margin-top: 10px; /* Einheitlicher Abstand zum Bild wie bei Projects */
 }
 
 .skills-back-button:hover {
@@ -867,94 +901,189 @@ body, html {
 }
 
 
-/*_______________________________Spotify_________________________________________________________________*/
+/*__________________________________________________________________________Spotify______________________________________________________________________________________*/
 .spotify-container {
-    width: 500px; /* Breitere Größe */
-    height: 400px; /* Beibehaltung der Höhe */
-    margin: 20px auto; /* Zentriert das Element */
+    position: absolute;
+    top: 0.5cm;
+    left: 68%; /* Erhöht den left-Wert für eine Verschiebung nach rechts */
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    height: 80px;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* Spotify-iframe */
 .spotify-container iframe {
     width: 100%;
     height: 100%;
-    border: none; /* Entfernt eventuelle Rahmen */
-}
-
-/*-----------------------------------------------Kontakformular--------------------------------------------------*/
-.contact-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 40px auto;
-    max-width: 1000px;
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-image {
-    flex: 1;
-    text-align: center;
-}
-
-.contact-image img {
-    width: 80%; /* Passt die Bildgröße an */
-    max-width: 250px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.contact-form {
-    flex: 2;
-    padding: 20px;
-}
-
-.contact-form h2 {
-    margin-bottom: 20px;
-    font-size: 1.8em;
-    color: #333;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.contact-form button {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
+    display: block;
 }
 
-.contact-form button:hover {
-    background-color: #555;
+/*__________________________________________________________________________contact.html_________________________________________________________________________________________*/
+.contact-section {
+    display: flex; /* Flexbox für Layout */
+    justify-content: center; /* Elemente zentrieren */
+    align-items: flex-start; /* Elemente am Anfang ausrichten */
+    padding: 20px; /* Padding für die Sektion */
 }
-.contact-form textarea {
-    resize: none; /* Deaktiviert die Größenänderung */
+
+.contact-container {
+    width: 400px; /* Breite der Kontaktbox */
+    height: 420px; /* Höhe der Kontaktbox */
+    background-color: #f4f4f4; /* Hintergrundfarbe */
+    border-radius: 15px; /* Abgerundete Ecken für die Kontaktbox */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Schatten für die Box */
+    padding: 20px; /* Padding innerhalb der Box */
+    margin-top: 60px; /* Abstand nach oben */
+    margin-right: 15px; /* Abstand von der Bildbox (1,5 cm) */
 }
+
+.image-container {
+    width: 400px; /* Breite des Bildcontainers */
+    height: 400px; /* Breite des Bildcontainers */
+    display: flex; /* Flexbox für Bildausrichtung */
+    justify-content: center; /* Bild horizontal zentrieren */
+    align-items: center; /* Bild vertikal zentrieren */
+    margin-top: 69px; /* Abstand nach oben */
+    margin-left: 15px; /* Abstand von der Kontaktbox (1,5 cm) */
+}
+
+.rounded-image {
+    width: 100%; /* Breite des Bildes anpassen */
+    height: 100%; /* Höhe des Bildes anpassen */
+    border-radius: 15px; /* Abgerundete Ecken für das Bild */
+    object-fit: cover; /* Bildanpassung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Schatten für das Bild */
+    margin-bottom: 20px; /* Abstand nach unten */
+}
+
+.contact-container label {
+    text-align: center; /* Zentriert die Labels */
+    margin-top: 20px; /* Einheitlicher Abstand über den Labels */
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%; /* Volle Breite der Eingabefelder */
+    padding: 10px; /* Innenabstand */
+    margin-top: 15px; /* Abstand zum oberen Rand */
+    margin-bottom: 10px; /* Abstand zum nächsten Element, erhöht */
+    border: 1px solid #ccc; /* Rahmenfarbe */
+    border-radius: 4px; /* Abgerundete Ecken der Eingabefelder */
+    box-sizing: border-box; /* Berücksichtigt Padding und Border in der Breite */
+}
+
+/* Textbereich nicht vergrößerbar */
+.contact-container textarea {
+    resize: none; /* Verhindert das Vergrößern des Textfeldes */
+    height: 100px; /* Feste Höhe für das Textfeld */
+}
+
+/* Button-Styling */
+.contact-container button {
+    margin-top: 0px; /* Abstand über dem Button */
+    padding: 10px 20px; /* Innenabstand */
+    background-color: #000000; /* Hintergrundfarbe */
+    color: white; /* Textfarbe */
+    border: none; /* Kein Rahmen */
+    border-radius: 8px; /* Abgerundete Ecken */
+    cursor: pointer; /* Zeiger zeigt an, dass es klickbar ist */
+    transition: background-color 0.3s; /* Übergangseffekt */
+    font-family: 'Times New Roman';
+    font-size: 16px;
+}
+
+.contact-container button:hover {
+    background-color: #555; /* Dunklere Farbe beim Hover */
+}
+
+.contact-back-button {
+    position: absolute; /* Positionierung erlaubt absolute Platzierung */
+    bottom: 100px; /* Abstand vom unteren Rand */
+    right: 360px; /* Abstand vom rechten Rand */
+    background-color: #000000; /* Schwarzer Hintergrund */
+    padding: 10px 20px; /* Innenabstand für mehr Klickfläche */
+    border-radius: 8px; /* Abgerundete Ecken */
+    font-size: 16px;
+    display: inline-block;
+    color: white; /* Textfarbe */
+    text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+/* Hover-Effekt für den Back-Button */
+.contact-back-button:hover {
+    background-color: #555; /* Dunklere Farbe beim Hover */
+}
+
+/* Standard-Layout für größere Bildschirme bleibt unverändert */
+
+/* Tablet-Ansicht (maximale Breite 768px) */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column; /* Elemente werden untereinander gestapelt */
+        align-items: center; /* Zentriert die Elemente */
+        padding: 10px;
+    }
+
+    .contact-container, .image-container {
+        width: 90%; /* Breite auf 90% des Bildschirms reduzieren */
+        margin: 15px 0; /* Gleichmäßiger Abstand oben und unten */
+        height: auto; /* Automatische Höhe */
+    }
+
+    .contact-back-button {
+        position: static; /* Entfernt die absolute Positionierung */
+        margin-top: 20px; /* Abstand zum oberen Rand */
+        align-self: center; /* Zentriert den Button */
+    }
+}
+
+/* Mobile-Ansicht (maximale Breite 480px) */
+@media (max-width: 480px) {
+    .contact-section {
+        flex-direction: column; /* Elemente untereinander stapeln */
+        align-items: center; /* Zentriert die Elemente */
+        padding: 10px;
+    }
+
+    .contact-container, .image-container {
+        width: 100%; /* Breite auf 100% des Bildschirms setzen */
+        margin: 10px 0; /* Abstand oben und unten */
+        padding: 15px; /* Geringeres Padding für mehr Platz */
+        height: auto; /* Automatische Höhe */
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+        width: 100%; /* Volle Breite der Eingabefelder */
+        padding: 8px; /* Weniger Innenabstand für kleine Bildschirme */
+        margin-bottom: 10px; /* Abstand zum nächsten Element */
+    }
+
+    .contact-container h2 {
+        font-size: 1.2em; /* Kleinere Schriftgröße für mobile Ansicht */
+    }
+
+    .contact-back-button {
+        position: static; /* Positioniert den Button unter dem Formular */
+        margin-top: 20px; /* Abstand nach oben */
+        align-self: center; /* Zentriert den Button */
+        width: 80%; /* Button-Breite für Mobilgeräte anpassen */
+        text-align: center;
+    }
+}
+
 
 /*---------------------------------------Verhindert horizontales scollen-----------------------------*/
 body {
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
+
+
+
+
