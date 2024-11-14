@@ -47,7 +47,7 @@ body, html {
     transition: transform 0.1s ease-out;
 }
 
-/* Icons */
+/*------------------------------------------------------------- Icons ---------------------------------------*/
 .social-container {
     position: fixed;
     top: 20px;
@@ -335,11 +335,11 @@ body, html {
 }
 
 
-/*________________________________________________________________________________________________Titel für Timeline_______________________________________________________________*/
+/*_____________________________________Titel für Timeline_______________________________________________________________*/
 .timeline-header {
     text-align: center;
     margin-bottom: 20px;
-    margin-top: -20px; /* Verschiebt Titel und Untertitel nach oben */
+    margin-top: -50px; /* Verschiebt Titel und Untertitel nach oben */
   }
   
   .timeline-title {
@@ -361,18 +361,18 @@ body, html {
     padding: 20px 0; /* Abstand oben und unten */
 }
 
-/* Vertikale Linie */
+/* Vertikale Linie (kann evtl entfernt werden)
 .timeline::before {  
     content: '';
     position: absolute;
     width: 6px;
-    background-color: #686565;
-    top: 140px; /* Beginn bei 1. Punkt */
-    bottom: 140px; /* Ende bei letztem Punkt */
+    background-color: #000000;
+    top: 140px;  Beginn bei 1. Punkt 
+    bottom: 140px; /* Ende bei letztem Punkt 
     left: 50%;
     margin-left: -3px;
     z-index: -1; /*Linie wird hinter die Punkte versetzt*/
-}
+
 
 /* Container für die Timeline-Elemente */
 .timeline-container {
@@ -491,6 +491,9 @@ body, html {
     }
 }
 
+
+
+
 /*___________________________________________________________________________Random facts___________________________________________________________________________________*/
 .fact-container {
     text-align: center;
@@ -498,7 +501,7 @@ body, html {
 }
 
 .fact-title {
-    font-size: 2em;
+    font-size: 36px;
     color: rgb(0, 0, 0);
     margin-bottom: 10px;
 }
@@ -506,7 +509,7 @@ body, html {
 .fact-bar {
     width: 100%;
     max-width: 100%; /* Breite auf 100% angepasst, um die volle Breite zu nutzen */
-    height: 200px;
+    height: 100px;
     background-color: #333;
     color: white;
     font-size: 1.5em;
@@ -516,9 +519,13 @@ body, html {
     overflow: hidden;
     margin: 20px auto;
     position: relative;
+    margin-top: 10px;
+    border: 1px solid black;
 }
 
 .fact-text {
+    font-family: 'Aptos Textkörper', sans-serif;
+    font-size: 15px;
     white-space: nowrap; /* Verhindert Zeilenumbruch, damit der Text einheitlich bleibt */
     overflow: hidden;
     opacity: 0; /* Startet unsichtbar */
@@ -904,16 +911,16 @@ body, html {
 /*__________________________________________________________________________Spotify______________________________________________________________________________________*/
 .spotify-container {
     position: absolute;
-    top: 0.5cm;
-    left: 68%; /* Erhöht den left-Wert für eine Verschiebung nach rechts */
-    transform: translateX(-50%);
+    top: 20px; /* Abstand von der Oberkante der Seite */
+    left: 20px; /* Positioniert den Container in der linken Ecke */
+    transform: translateX(0); /* Entfernt das Verschieben, da wir den Container exakt positionieren wollen */
     margin: 0;
     padding: 0;
     width: 300px;
-    height: 80px;
+    height: 300px;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    
 }
 
 /* Spotify-iframe */
@@ -1083,6 +1090,110 @@ body, html {
 body {
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
+
+/*---------------------------------------Toogle Button-----------------------------------------------*/
+
+/* Weißmodus (Standard) */
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+.light-mode .text-section,
+.light-mode .about-container,
+.light-mode .content-section,
+.light-mode .timeline,
+.light-mode .fact-bar {
+    background-color: white;
+    color: black;
+}
+
+.light-mode .title,
+.light-mode .about-title,
+.light-mode .fact-title {
+    color: black;
+}
+
+/* Schwarzmodus */
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode .text-section,
+.dark-mode .about-container,
+.dark-mode .content-section,
+.dark-mode .timeline,
+.dark-mode .fact-bar {
+    background-color: #000000;
+    color: white;
+}
+
+.dark-mode .title,
+.dark-mode .about-title,
+.dark-mode .fact-title {
+    color: white;
+}
+
+/* Optional: Schattierungen und Akzente im Dunkelmodus */
+.dark-mode .about-description {
+    color: #cccccc; /* Hellgrauer Text für bessere Lesbarkeit */
+}
+
+.dark-mode .btn {
+    background-color: #000000; /* Dunkelgraue Buttons */
+    color: white;
+}
+
+/* Toggle-Button-Styling */
+.switch {
+    position: fixed; /* Stellt sicher, dass der Button an einer festen Position bleibt */
+    bottom: 20px; /* Abstand von der Unterkante der Seite */
+    right: 20px; /* Abstand von der rechten Seite der Seite */
+    display: inline-block;
+    width: 40px; /* Kleinere Breite */
+    height: 20px; /* Kleinere Höhe */
+    z-index: 1000; /* Stellt sicher, dass der Button über anderen Inhalten bleibt */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px; /* Kleinere Rundung passend zur Höhe */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; /* Kleinere Höhe */
+    width: 16px; /* Kleinere Breite */
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: black;
+}
+
+input:checked + .slider:before {
+    transform: translateX(18px); /* Anpassung entsprechend der neuen Breite des Schalters */
+}
+
 
 
 
