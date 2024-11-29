@@ -47,6 +47,49 @@ body, html {
     transition: transform 0.1s ease-out;
 }
 
+
+/*__________________________________________________________________________Spotify______________________________________________________________________________________*/
+
+.spotify-container {
+    position: absolute; /* Standardposition für große Bildschirme */
+    top: 20px; /* Abstand von der Oberkante */
+    left: 20px; /* Abstand von der linken Kante */
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Spotify-iframe */
+.spotify-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Responsive Design für Tablets */
+@media (max-width: 768px) {
+    .spotify-container {
+        position: static; /* Entfernt absolute Positionierung für kleinere Bildschirme */
+        margin: 20px auto 0; /* Zentriert den Spotify-Container unterhalb der Social Icons */
+        padding: 0;
+    }
+}
+
+/* Responsive Design für Smartphones */
+@media (max-width: 480px) {
+    .spotify-container {
+        position: static; /* Entfernt absolute Positionierung */
+        margin: 15px auto 0; /* Zentriert den Spotify-Container unterhalb der Social Icons */
+        padding: 0;
+    }
+}
+
+
+
 /*------------------------------------------------------------- Icons ---------------------------------------*/
 .social-container {
     position: fixed;
@@ -267,8 +310,18 @@ body, html {
 /* ___________________________________________________________________________Buttons_____________________________________________________________________________________________ */
 .content-section {
     display: flex;
-    justify-content: center; /* Zentriert die Buttons */
+    justify-content: center; /* Zentriert die Buttons horizontal */
+    align-items: center; /* Zentriert die Buttons vertikal */
     padding: 20px;
+    width: 100%; /* Stellt sicher, dass der Container die volle Breite einnimmt */
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: flex; /* Flexbox verwenden */
+    gap: 20px; /* Einheitlicher Abstand zwischen den Buttons */
+    flex-wrap: wrap; /* Buttons umbrechen lassen, falls nötig */
+    justify-content: center; /* Zentriert die Buttons horizontal */
 }
 
 .btn {
@@ -276,14 +329,19 @@ body, html {
     color: black;
     border: none; 
     border-radius: 10px; 
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    width: 150px; 
-    font-size: 16px;
+    display: inline-flex; /* Flexbox auf Button anwenden */
+    justify-content: center; /* Text horizontal zentrieren */
+    align-items: center; /* Text vertikal zentrieren */
+    padding: 0; /* Padding entfernt, um Unebenheiten zu vermeiden */
+    width: 150px; /* Einheitliche Breite */
+    height: 50px; /* Einheitliche Höhe */
+    font-size: 16px; /* Einheitliche Schriftgröße */
+    font-weight: normal; /* Stellt sicher, dass Schrift nicht zu dünn oder fett ist */
+    text-align: center;
+    text-transform: none; /* Keine Großbuchstaben erzwingen */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
     transition: background-color 0.3s ease, transform 0.3s ease; 
-    text-align: center;
+    box-sizing: border-box; /* Stellt sicher, dass Breite und Höhe nicht durch Padding beeinflusst werden */
 }
 
 .btn:hover {
@@ -292,47 +350,37 @@ body, html {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
 }
 
-
 /* Tablet-Ansicht (maximale Breite 768px) */
 @media (max-width: 768px) {
-    .content-section {
+    .buttons {
         flex-direction: column; /* Buttons untereinander anordnen */
+        gap: 15px; /* Einheitlicher Abstand */
         align-items: center; /* Buttons zentrieren */
     }
 
     .btn {
         width: 70%; /* Buttons nehmen 70% der Bildschirmbreite ein */
-        font-size: 14px; /* Leicht kleinere Schriftgröße */
-        padding: 12px; /* Etwas mehr Innenabstand für größere Klickfläche */
-        margin-top: 15px; /* Etwas größerer Abstand zwischen den Buttons */
-        text-align: center; /* Text im Button zentrieren */
+        height: 50px; /* Einheitliche Höhe */
+        font-size: 14px; /* Kleinere Schriftgröße */
     }
 }
 
 /* Mobile-Ansicht (maximale Breite 480px) */
 @media (max-width: 480px) {
-    .content-section {
-        display: flex;
-        flex-direction: column; /* Buttons untereinander anordnen */
-        align-items: center; /* Buttons horizontal zentrieren */
-        padding: 10px; /* Padding für besseren Look auf kleinen Bildschirmen */
-    }
-
     .buttons {
-        display: flex; /* Flexbox für die Buttons */
-        flex-direction: row; /* Buttons nebeneinander anordnen */
-        justify-content: center; /* Buttons horizontal zentrieren */
-        gap: 10px; /* Abstand zwischen den Buttons */
-        width: 100%; /* Breite auf 100% setzen */
+        flex-direction: column; /* Buttons untereinander anordnen */
+        gap: 15px; /* Einheitlicher Abstand */
+        align-items: center; /* Buttons horizontal zentrieren */
     }
 
     .btn {
-        width: 45%; /* Reduzierte Breite, damit zwei Buttons nebeneinander passen */
-        font-size: 14px; /* Kleinere Schriftgröße */
-        padding: 10px; /* Angemessenes Padding für mobile Ansicht */
-        text-align: center; /* Zentriert den Text im Button */
+        width: 90%; /* Buttons nehmen 90% der Bildschirmbreite ein */
+        height: 50px; /* Einheitliche Höhe */
+        font-size: 14px; /* Einheitliche Schriftgröße */
     }
 }
+
+
 
 
 /*_____________________________________Titel für Timeline_______________________________________________________________*/
@@ -360,19 +408,6 @@ body, html {
     margin: 50px auto; /* Zentriert die Timeline */
     padding: 20px 0; /* Abstand oben und unten */
 }
-
-/* Vertikale Linie (kann evtl entfernt werden)
-.timeline::before {  
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #000000;
-    top: 140px;  Beginn bei 1. Punkt 
-    bottom: 140px; /* Ende bei letztem Punkt 
-    left: 50%;
-    margin-left: -3px;
-    z-index: -1; /*Linie wird hinter die Punkte versetzt*/
-
 
 /* Container für die Timeline-Elemente */
 .timeline-container {
@@ -450,32 +485,58 @@ body, html {
 
 /* Responsive Anpassungen */
 @media screen and (max-width: 600px) {
+    .timeline {
+        position: relative;
+        left: 50px; /* Schiebt die gesamte Timeline nach rechts */
+    }
+ /* Timeline-Titel zentrieren */
+    .timeline-header {
+        display: flex; /* Flexbox auch in mobiler Ansicht verwenden */
+        flex-direction: column; /* Titel und Untertitel bleiben untereinander */
+        justify-content: center; /* Vertikale Zentrierung */
+        align-items: center; /* Horizontale Zentrierung */
+        text-align: center; /* Text innerhalb des Containers zentrieren */
+        margin: 0 auto; /* Stelle sicher, dass der Titel nicht verschoben wird */
+        padding: 0 10px; /* Geringes Padding für bessere Platznutzung */
+    }
+
+    .timeline-title {
+        font-size: 28px; /* Etwas kleinere Schriftgröße für mobile Ansicht */
+        padding-right: 100px;
+    }
+
+    .timeline-subtitle {
+        font-size: 16px; /* Kleinere Schriftgröße für Untertitel */
+        padding-right: 100px;
+    }
+
     .timeline::after {
-        left: 31px;
+        left: 80px; /* Passe den Wert an, um die vertikale Linie ebenfalls mitzuschieben */
     }
 
     .timeline-container {
-        width: 100%;
-        padding-left: 70px;
+        width: 60%;
+        padding-left: 90px; /* Schiebt den Inhalt weiter nach rechts */
         padding-right: 25px;
     }
 
     .timeline-container.left::before,
     .timeline-container.right::before {
-        left: 60px;
+        left: 80px; /* Verschiebt den Marker (Dreieck) nach rechts */
         border-width: 10px 10px 10px 0;
         border-color: transparent #000 transparent transparent;
     }
 
     .timeline-container.left::after,
     .timeline-container.right::after {
-        left: 15px;
+        left: 35px; /* Schiebt das Rechteck weiter nach rechts */
     }
 
     .timeline-container.right {
-        left: 0;
+        left: 20px; /* Verschiebt die rechte Timeline-Box */
     }
 }
+
 .show {
     animation: fadeIn 2s forwards;
 }
@@ -490,6 +551,7 @@ body, html {
         transform: translateY(0);
     }
 }
+
 
 
 
@@ -562,6 +624,24 @@ body, html {
     100% {
         transform: translateX(100%);
         opacity: 0;
+    }
+}
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .fact-title {
+        font-size: 28px; /* Reduziert die Schriftgröße auf 28px in der mobilen Ansicht */
+    }
+
+    .fact-bar {
+        height: 80px; /* Passt die Höhe des Fact-Bars für die mobile Ansicht an */
+        font-size: 1.2em; /* Reduziert die Schriftgröße des Fact-Bars */
+    }
+
+    .fact-text {
+        font-size: 14px; /* Reduziert die Schriftgröße des Fließtextes in der mobilen Ansicht */
     }
 }
 /* ______________________________________________________________________CSS für html Projects________________________________________________________________________________________ */
@@ -776,7 +856,7 @@ body, html {
 
 .skills-right-section h1 {
     font-size: 22px; /* Passe die Schriftgröße nach Wunsch an */
-    color: #333;
+    color: #000000;
     margin-top: 10px; /* Optional: Abstand über dem Titel */
     text-align: center;
     padding-top: 10px;
@@ -800,8 +880,8 @@ body, html {
     font-size: 16px;
     margin-bottom: 25px; /* Vergrößert den Abstand zwischen Absätzen */
     line-height: 1.8; /* Erhöht den Zeilenabstand für bessere Lesbarkeit */
-    color: #666;
-    margin-top: -10px; /* Schiebt den ersten Absatz leicht nach oben */
+    color: #000000;
+    margin-top: -20px; /* Schiebt den ersten Absatz leicht nach oben */
 }
 
 /* Rechte Seite: Bild mit abgerundeten Ecken */
@@ -908,114 +988,93 @@ body, html {
 }
 
 
-/*__________________________________________________________________________Spotify______________________________________________________________________________________*/
-.spotify-container {
-    position: absolute;
-    top: 20px; /* Abstand von der Oberkante der Seite */
-    left: 20px; /* Positioniert den Container in der linken Ecke */
-    transform: translateX(0); /* Entfernt das Verschieben, da wir den Container exakt positionieren wollen */
-    margin: 0;
-    padding: 0;
-    width: 300px;
-    height: 300px;
-    border-radius: 12px;
-    overflow: hidden;
-    
-}
 
-/* Spotify-iframe */
-.spotify-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-}
 
 /*__________________________________________________________________________contact.html_________________________________________________________________________________________*/
 .contact-section {
-    display: flex; /* Flexbox für Layout */
-    justify-content: center; /* Elemente zentrieren */
-    align-items: flex-start; /* Elemente am Anfang ausrichten */
-    padding: 20px; /* Padding für die Sektion */
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    padding: 20px; 
 }
 
 .contact-container {
-    width: 400px; /* Breite der Kontaktbox */
-    height: 420px; /* Höhe der Kontaktbox */
-    background-color: #f4f4f4; /* Hintergrundfarbe */
-    border-radius: 15px; /* Abgerundete Ecken für die Kontaktbox */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Schatten für die Box */
-    padding: 20px; /* Padding innerhalb der Box */
-    margin-top: 60px; /* Abstand nach oben */
-    margin-right: 15px; /* Abstand von der Bildbox (1,5 cm) */
+    width: 400px; 
+    height: 420px; 
+    background-color: #f4f4f4; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    margin-top: 60px; 
+    margin-right: 15px; 
 }
 
 .image-container {
-    width: 400px; /* Breite des Bildcontainers */
-    height: 400px; /* Breite des Bildcontainers */
-    display: flex; /* Flexbox für Bildausrichtung */
-    justify-content: center; /* Bild horizontal zentrieren */
-    align-items: center; /* Bild vertikal zentrieren */
-    margin-top: 69px; /* Abstand nach oben */
-    margin-left: 15px; /* Abstand von der Kontaktbox (1,5 cm) */
+    width: 400px; 
+    height: 400px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 69px; 
+    margin-left: 15px; 
 }
 
 .rounded-image {
-    width: 100%; /* Breite des Bildes anpassen */
-    height: 100%; /* Höhe des Bildes anpassen */
-    border-radius: 15px; /* Abgerundete Ecken für das Bild */
-    object-fit: cover; /* Bildanpassung */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Schatten für das Bild */
-    margin-bottom: 20px; /* Abstand nach unten */
+    width: 100%; 
+    height: 100%; 
+    border-radius: 15px; 
+    object-fit: cover; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 20px; 
 }
 
 .contact-container label {
-    text-align: center; /* Zentriert die Labels */
-    margin-top: 20px; /* Einheitlicher Abstand über den Labels */
+    text-align: center; 
+    margin-top: 20px; 
 }
 
 .contact-container input,
 .contact-container textarea {
-    width: 100%; /* Volle Breite der Eingabefelder */
-    padding: 10px; /* Innenabstand */
-    margin-top: 15px; /* Abstand zum oberen Rand */
-    margin-bottom: 10px; /* Abstand zum nächsten Element, erhöht */
-    border: 1px solid #ccc; /* Rahmenfarbe */
-    border-radius: 4px; /* Abgerundete Ecken der Eingabefelder */
-    box-sizing: border-box; /* Berücksichtigt Padding und Border in der Breite */
+    width: 100%; 
+    padding: 10px; 
+    margin-top: 15px; 
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
 }
 
 /* Textbereich nicht vergrößerbar */
 .contact-container textarea {
-    resize: none; /* Verhindert das Vergrößern des Textfeldes */
-    height: 100px; /* Feste Höhe für das Textfeld */
+    resize: none; 
+    height: 100px; 
 }
 
 /* Button-Styling */
 .contact-container button {
-    margin-top: 0px; /* Abstand über dem Button */
-    padding: 10px 20px; /* Innenabstand */
-    background-color: #000000; /* Hintergrundfarbe */
-    color: white; /* Textfarbe */
-    border: none; /* Kein Rahmen */
-    border-radius: 8px; /* Abgerundete Ecken */
-    cursor: pointer; /* Zeiger zeigt an, dass es klickbar ist */
-    transition: background-color 0.3s; /* Übergangseffekt */
+    margin-top: 0px; 
+    padding: 10px 20px; 
+    background-color: #000000; 
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
     font-family: 'Times New Roman';
     font-size: 16px;
 }
 
 .contact-container button:hover {
-    background-color: #555; /* Dunklere Farbe beim Hover */
+    background-color: #555; 
 }
 
 .contact-back-button {
-    position: absolute; /* Positionierung erlaubt absolute Platzierung */
-    bottom: 100px; /* Abstand vom unteren Rand */
-    right: 360px; /* Abstand vom rechten Rand */
-    background-color: #000000; /* Schwarzer Hintergrund */
-    padding: 10px 20px; /* Innenabstand für mehr Klickfläche */
-    border-radius: 8px; /* Abgerundete Ecken */
+    position: absolute; 
+    bottom: 100px; 
+    right: 360px; 
+    background-color: #000000; 
+    padding: 10px 20px; 
+    border-radius: 8px; 
     font-size: 16px;
     display: inline-block;
     color: white; /* Textfarbe */
@@ -1137,23 +1196,23 @@ body {
 
 /* Optional: Schattierungen und Akzente im Dunkelmodus */
 .dark-mode .about-description {
-    color: #cccccc; /* Hellgrauer Text für bessere Lesbarkeit */
+    color: #cccccc; 
 }
 
 .dark-mode .btn {
-    background-color: #000000; /* Dunkelgraue Buttons */
+    background-color: #000000; 
     color: white;
 }
 
 /* Toggle-Button-Styling */
 .switch {
-    position: fixed; /* Stellt sicher, dass der Button an einer festen Position bleibt */
-    bottom: 20px; /* Abstand von der Unterkante der Seite */
-    right: 20px; /* Abstand von der rechten Seite der Seite */
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
     display: inline-block;
-    width: 40px; /* Kleinere Breite */
-    height: 20px; /* Kleinere Höhe */
-    z-index: 1000; /* Stellt sicher, dass der Button über anderen Inhalten bleibt */
+    width: 40px; 
+    height: 20px; 
+    z-index: 1000; 
 }
 
 .switch input {
@@ -1171,14 +1230,14 @@ body {
     bottom: 0;
     background-color: #ccc;
     transition: 0.4s;
-    border-radius: 20px; /* Kleinere Rundung passend zur Höhe */
+    border-radius: 20px; 
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 16px; /* Kleinere Höhe */
-    width: 16px; /* Kleinere Breite */
+    height: 16px; 
+    width: 16px; 
     left: 2px;
     bottom: 2px;
     background-color: white;
@@ -1187,14 +1246,45 @@ body {
 }
 
 input:checked + .slider {
-    background-color: black;
+    background-color: rgb(171, 160, 160);
 }
 
 input:checked + .slider:before {
-    transform: translateX(18px); /* Anpassung entsprechend der neuen Breite des Schalters */
+    transform: translateX(18px); 
+}
+
+.dark-mode .icon {
+    filter: invert(1) brightness(2);
+}
+
+/* Dark Mode Button Styling */
+.dark-mode .btn {
+    border: 2px solid white; 
+    background-color: #686565; 
+    color: white; 
+}
+
+.dark-mode .btn:hover {
+    background-color: #686565;
 }
 
 
 
 
 
+
+
+/*___________________________________________________________________________________Emojis______________________________________________________________________*/
+
+.icon1 {
+    margin-right: 10px; 
+    font-size: 1.5rem;
+    flex-shrink: 0; 
+  }
+
+
+  .icon2 {
+    margin-right: 10px; 
+    font-size: 1.5rem;
+    flex-shrink: 0; 
+  }

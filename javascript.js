@@ -119,20 +119,10 @@ setInterval(showNextFact, 5000);
 //showNextFact();
  
 
-//Neue Funktion hier einfügen#############################
-
-
-
-
-
-
-
-
-
+//ToggleButton
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("colorModeToggle");
 
-    // Überprüfen, ob der Toggle-Button ausgewählt ist, und entsprechend den Modus ändern
     toggleButton.addEventListener("change", function () {
         if (toggleButton.checked) {
             document.body.classList.add("dark-mode");
@@ -143,8 +133,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Standardmäßig auf Weißmodus setzen
     document.body.classList.add("light-mode");
 });
+
+
+//Neue Funktion hier einfügen#############################
 
 
