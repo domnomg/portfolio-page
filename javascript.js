@@ -137,6 +137,28 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+//E-Mail zusenden
+emailjs.init("jiQVv7gsTCgnFNRJb"); 
+
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Verhindert das Standardformular-Verhalten
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    emailjs.send("service_by6qoms", "template_54lxrnq", {
+        from_name: name,
+        from_email: email,
+        message: message,
+    }).then(
+        function (response) {
+            alert("Nachricht erfolgreich gesendet!");
+        },
+        function (error) {
+            alert("Fehler beim Senden der Nachricht: " + error.text);
+        }
+    );
+});
+
 //Neue Funktion hier einfügen#############################
-
-

@@ -51,9 +51,9 @@ body, html {
 /*__________________________________________________________________________Spotify______________________________________________________________________________________*/
 
 .spotify-container {
-    position: absolute; /* Standardposition für große Bildschirme */
-    top: 20px; /* Abstand von der Oberkante */
-    left: 20px; /* Abstand von der linken Kante */
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
     margin: 0;
     padding: 0;
     width: 300px;
@@ -73,8 +73,8 @@ body, html {
 /* Responsive Design für Tablets */
 @media (max-width: 768px) {
     .spotify-container {
-        position: static; /* Entfernt absolute Positionierung für kleinere Bildschirme */
-        margin: 20px auto 0; /* Zentriert den Spotify-Container unterhalb der Social Icons */
+        position: static; 
+        margin: 20px auto 0; 
         padding: 0;
     }
 }
@@ -82,8 +82,8 @@ body, html {
 /* Responsive Design für Smartphones */
 @media (max-width: 480px) {
     .spotify-container {
-        position: static; /* Entfernt absolute Positionierung */
-        margin: 15px auto 0; /* Zentriert den Spotify-Container unterhalb der Social Icons */
+        position: static; 
+        margin: 15px auto 0; 
         padding: 0;
     }
 }
