@@ -1,4 +1,4 @@
-/*__________________________________________Allgemeine Einstellungen_________________________________________________*/
+/*__________________________________________Allgemeine Einstellungen__________________________________________*/
 body, html {
     margin: 0;
     padding: 0;
@@ -48,8 +48,7 @@ body, html {
 }
 
 
-/*__________________________________________________________________________Spotify______________________________________________________________________________________*/
-
+/*__________________________________________Spotify__________________________________________*/
 .spotify-container {
     position: absolute; 
     top: 20px; 
@@ -90,7 +89,7 @@ body, html {
 
 
 
-/*------------------------------------------------------------- Icons ---------------------------------------*/
+/*__________________________________________Icons Linkdin / Instagram / Github__________________________________________*/
 .social-container {
     position: fixed;
     top: 20px;
@@ -147,7 +146,7 @@ body, html {
         justify-content: center;
         padding-top: 10px;
         width: 100%;
-        margin-top: -10px; /* Reduziert den Abstand zwischen Icons und Titel */
+        margin-top: -10px; 
     }
 }
 
@@ -184,12 +183,11 @@ body, html {
         justify-content: center;
         padding-top: 5px;
         width: 100%;
-        margin-top: -5px; /* Noch geringerer Abstand zum Titel */
+        margin-top: -5px; 
     }
 }
 
-/*_______________________________A little about me____________________________________*/
-/* Gesamtcontainer für "A little about me" */
+/*__________________________________________A little about me__________________________________________*/
 .about-container {
     display: flex;
     justify-content: space-between;
@@ -251,7 +249,7 @@ body, html {
     z-index: 1;
 }
 
-/* ---------------------------------Responsive Design für Tablets und kleinere Bildschirme------------------------ */
+/* Responsive Design für Tablets und kleinere Bildschirme*/
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column; /* Spaltenlayout für kleinere Bildschirme */
@@ -281,7 +279,7 @@ body, html {
 
     /* Anpassung der Bilder */
     .about-image-small, .about-image-large {
-        width: 30%; /* Verkleinert die Bilder */
+        width: 20%; /* Verkleinert die Bilder */
         position: static; /* Entfernt die absolute Positionierung */
         transform: rotate(0deg); /* Rotation entfernen */
         margin: 10px 0; /* Abstände zwischen den Bildern */
@@ -301,8 +299,10 @@ body, html {
 
     /* Anpassung der Bilder auf kleine Bildschirme */
     .about-image-small, .about-image-large {
-        width: 70%; /* Verkleinert die Bilder weiter für Smartphones */
-        margin: 10px 0;
+        width: 20%; /* Verkleinert die Bilder */
+        position: static; /* Entfernt die absolute Positionierung */
+        transform: rotate(0deg); /* Rotation entfernen */
+        margin: 10px 0; /* Abstände zwischen den Bildern */
     }
 }
 
@@ -359,24 +359,26 @@ body, html {
     }
 
     .btn {
-        width: 70%; /* Buttons nehmen 70% der Bildschirmbreite ein */
-        height: 50px; /* Einheitliche Höhe */
-        font-size: 14px; /* Kleinere Schriftgröße */
+        width: 70%; 
+        height: 50px; 
+        font-size: 14px; 
+        width: 150px; 
+        height: 50px; 
     }
 }
 
 /* Mobile-Ansicht (maximale Breite 480px) */
 @media (max-width: 480px) {
     .buttons {
-        flex-direction: column; /* Buttons untereinander anordnen */
-        gap: 15px; /* Einheitlicher Abstand */
-        align-items: center; /* Buttons horizontal zentrieren */
+        flex-direction: column; 
+        gap: 15px; 
+        align-items: center; 
     }
 
     .btn {
-        width: 90%; /* Buttons nehmen 90% der Bildschirmbreite ein */
-        height: 50px; /* Einheitliche Höhe */
-        font-size: 14px; /* Einheitliche Schriftgröße */
+        width: 90%; 
+        height: 50px; 
+        font-size: 14px; 
     }
 }
 
@@ -552,10 +554,6 @@ body, html {
     }
 }
 
-
-
-
-
 /*___________________________________________________________________________Random facts___________________________________________________________________________________*/
 .fact-container {
     text-align: center;
@@ -572,7 +570,7 @@ body, html {
     width: 100%;
     max-width: 100%; /* Breite auf 100% angepasst, um die volle Breite zu nutzen */
     height: 100px;
-    background-color: #333;
+    background-color: #ffffff;
     color: white;
     font-size: 1.5em;
     display: flex;
@@ -582,7 +580,7 @@ body, html {
     margin: 20px auto;
     position: relative;
     margin-top: 10px;
-    border: 1px solid black;
+    border: 1px solid rgba(255, 255, 255, 0);
 }
 
 .fact-text {
@@ -1202,6 +1200,10 @@ body {
 .dark-mode .btn {
     background-color: #000000; 
     color: white;
+}
+
+.dark-mode .timeline-container::after {
+    background-color: #fff; /* Füllung der Punkte im Dark Mode auf Weiß */
 }
 
 /* Toggle-Button-Styling */

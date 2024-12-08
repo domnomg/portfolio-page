@@ -1,25 +1,25 @@
-// ANIMATION, die den Titel auf der Titelseit auseinander zieht
+// ANIMATION 1 - die den Titel auf der Titelseit auseinander zieht
 window.addEventListener('scroll', function() {
-    const scrollAmount = window.scrollY; // Die aktuelle Scroll-Höhe
-    const portfolio = document.getElementById('portfolio'); // Zugriff auf das PORTFOLIO-Element
-    const name = document.getElementById('name'); // Zugriff auf das DOMINIQUE GAVIN-Element
+    const scrollAmount = window.scrollY; 
+    const portfolio = document.getElementById('portfolio'); 
+    const name = document.getElementById('name'); 
 
-    // Definieren Sie den Verschiebungsfaktor (je höher der Wert, desto schneller die Trennung)
+   
     const shiftFactor = scrollAmount * 0.2;
 
-    // Setze die Transform-Eigenschaft, um die Titel auseinander zu ziehen
-    portfolio.style.transform = `translateX(${-shiftFactor}px)`; // Portfolio nach links
-    name.style.transform = `translateX(${shiftFactor}px)`; // Dominique Gavin nach rechts
+    
+    portfolio.style.transform = `translateX(${-shiftFactor}px)`; //links
+    name.style.transform = `translateX(${shiftFactor}px)`; //rechts
 });
 
 
 
-//ANIMATION, die macht, dass das Titelbild verschwindet sobald man beim "A little about me ankommt"
+//ANIMATION 2 - die macht, dass das Titelbild verschwindet sobald man beim "A little about me ankommt"
 document.addEventListener("DOMContentLoaded", function () {
-    // Alle Timeline-Container-Elemente sammeln
+   
     const containers = document.querySelectorAll('.timeline-container');
     
-    // Erstelle den IntersectionObserver für die Timeline
+    
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -28,14 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 entry.target.classList.remove('show');
             }
         });
-    }, { threshold: 0 }); // 0% des Elements müssen sichtbar sein, bevor es erscheint
+    }, { threshold: 0 }); 
 
-    // Jedes Container-Element dem Observer hinzufügen
+   
     containers.forEach(container => {
         observer.observe(container);
     });
 
-    // Neuen Observer für das Titelbild erstellen
+  
     const titleImageContainer = document.querySelector('.container');
 
     const titleImageObserver = new IntersectionObserver((entries) => {
@@ -50,39 +50,39 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, { threshold: [0.15] }); // Überwacht, wenn 15 % oder weniger sichtbar sind
 
-    // Titelbild dem Observer hinzufügen
+  
     titleImageObserver.observe(titleImageContainer);
 });
 
 
 
-
-//ANIMATION für das Erscheinen der einzelnen Container beim Scrollen der Timeline
+//ANIMATION 3 - für das Erscheinen der einzelnen Container beim Scrollen der Timeline
 document.addEventListener("DOMContentLoaded", function () {
-    // Alle Timeline-Container-Elemente sammeln
+   
     const containers = document.querySelectorAll('.timeline-container');
     
-    // Erstelle den IntersectionObserver
+    
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Wenn das Element in den Viewport kommt, füge die "show"-Klasse hinzu
+                
                 entry.target.classList.add('show');
             } else {
-                // Wenn das Element den Viewport verlässt, entferne die "show"-Klasse
+                
                 entry.target.classList.remove('show');
             }
         });
     }, { threshold: 0}); // 0% des Elements müssen sichtbar sein, bevor es erscheint
 
-    // Jedes Container-Element dem Observer hinzufügen
+  
     containers.forEach(container => {
         observer.observe(container);
     });
 });
 
 
-//Random Facts abut me
+
+//ANIMATION 4 - Random Facts abut me
 const facts = [
     "I'm more afraid of jellyfish than sharks",
     "My favourite food is sushi",
@@ -103,13 +103,13 @@ function showNextFact() {
     // Füge die Animationen hinzu
     setTimeout(() => {
         factText.classList.add('slide-in');
-    }, 100); // Kurze Verzögerung vor dem Einblenden
+    }, 100); 
 
     // Entferne die Animation nach einer bestimmten Zeit
     setTimeout(() => {
         factText.classList.remove('slide-in');
         factText.classList.add('slide-out');
-    }, 4000); // 4 Sekunden bis zur Ausblendung
+    }, 4000); // 4 Sekunden Ansicht
 }
 
 // Führt die Anzeige alle 5 Sekunden aus
@@ -119,7 +119,8 @@ setInterval(showNextFact, 5000);
 //showNextFact();
  
 
-//ToggleButton
+
+//ANIMATION 5 - Wechsel auf Darkmode - ToggleButton
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("colorModeToggle");
 
@@ -137,15 +138,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-//E-Mail zusenden
+
+//ANIMATION 6 - E-Mail zusenden (EmailJS)
 emailjs.init("jiQVv7gsTCgnFNRJb"); 
 
 document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Verhindert das Standardformular-Verhalten
+    event.preventDefault(); 
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+     // Eingabefelder auslesen
+     const nameInput = document.getElementById("name");
+     const emailInput = document.getElementById("email");
+     const messageInput = document.getElementById("message");
+ 
+     const name = nameInput.value;
+     const email = emailInput.value;
+     const message = messageInput.value;
 
     emailjs.send("service_by6qoms", "template_54lxrnq", {
         from_name: name,
@@ -154,6 +161,12 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     }).then(
         function (response) {
             alert("Nachricht erfolgreich gesendet!");
+
+            // Eingabefelder leeren
+            nameInput.value = "";
+            emailInput.value = "";
+            messageInput.value = "";
+
         },
         function (error) {
             alert("Fehler beim Senden der Nachricht: " + error.text);
@@ -161,4 +174,7 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     );
 });
 
+
+
 //Neue Funktion hier einfügen#############################
+
