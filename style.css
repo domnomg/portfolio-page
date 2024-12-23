@@ -837,12 +837,12 @@ body, html {
 .skills-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
+    flex-wrap: nowrap; /* Verhindert, dass die Inhalte auf mehrere Zeilen umbrechen */
+    width: 80%; /* Begrenzte Breite des Containers */
+    max-width: 1200px; /* Maximale Breite für größere Bildschirme */
+    justify-content: space-between; /* Elemente gleichmäßig verteilen */
     padding-top: 70px;
-    padding-left: 40px; /* Gleichmäßiger Abstand links und rechts */
-    padding-right: 40px;
+    margin: 0 auto; /* Zentriert den Container horizontal */
     box-sizing: border-box;
     gap: 40px;
 }
@@ -866,32 +866,37 @@ body, html {
     position: relative; 
 }
 
-.skills-left-section p {
-    font-size: 16px;
-    margin-bottom: 25px; 
-    line-height: 1.8; 
-    color: #000000;
-    margin-top: -20px; 
+.skills-left-section, .skills-right-section {
+    flex-shrink: 0; /* Verhindert das Schrumpfen der Abschnitte */
+}
+
+.skills-left-section {
+    width: 48%; /* Proportionale Breite der linken Seite */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 70px;
+    position: relative; 
+    text-align: left; /* Text bleibt linksbündig */
 }
 
 /* Rechte Seite: Bild mit abgerundeten Ecken */
 .skills-right-section {
-    width: 40%;
-    position: relative;
+    width: 48%; /* Proportionale Breite der rechten Seite */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 0; 
 }
 
 /* Quadratische Form des Bildes */
 .skills-rounded-image {
-    width: 400px;
-    height: 400px;
+    width: 100%; /* Passt die Größe des Bildes an die Breite der rechten Sektion an */
+    max-width: 350px; /* Verhindert, dass das Bild zu groß wird */
+    height: auto;
     border-radius: 15px;
     object-fit: cover;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 /* Zurück-Button */
