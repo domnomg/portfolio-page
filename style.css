@@ -1049,9 +1049,9 @@ body, html {
 }
 
 .contact-back-button {
-    position: absolute; 
-    bottom: 100px; 
-    right: 360px; 
+    position: fixed; /* Position bleibt relativ zum Viewport */
+    bottom: 15%; /* 10% des Viewport-Höhenmaßes */
+    right: 28%; /* 20% des Viewport-Breitenmaßes */
     background-color: #000000; 
     padding: 10px 20px; 
     border-radius: 8px; 
@@ -1060,6 +1060,7 @@ body, html {
     color: white; 
     text-decoration: none; 
 }
+
 
 /* Responsive Design - Tablet*/
 @media (max-width: 768px) {
