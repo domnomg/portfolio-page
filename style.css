@@ -233,6 +233,7 @@ body, html {
 /* Fancybild_P22 */
 .about-image-small {
     width: 50%;
+    max-width: 40%; /* Begrenzung der maximalen Breite in Prozent */
     transform: rotate(-15deg);
     position: absolute;
     top: -30px;
@@ -243,6 +244,7 @@ body, html {
 /* Profilbild_P2 */
 .about-image-large {
     width: 70%;
+    max-width: 70%; /* Begrenzung der maximalen Breite in Prozent */
     position: absolute;
     top: 5px;
     left: 20px;
