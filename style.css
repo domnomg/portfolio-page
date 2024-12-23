@@ -249,44 +249,41 @@ body, html {
     z-index: 1;
 }
 
-/* Responsive Design für Tablets und kleinere Bildschirme*/
+/* Responsive Design - Tablet*/
 @media (max-width: 768px) {
     .about-container {
-        flex-direction: column; /* Spaltenlayout für kleinere Bildschirme */
-        align-items: center; /* Zentriert den gesamten Inhalt */
+        flex-direction: column; 
+        align-items: center; 
         text-align: center;
     }
 
     .about-left, .about-right {
-        width: 100%; /* Volle Breite für Titel, Text und Bilder */
-        text-align: center; /* Zentriert Text bei kleineren Bildschirmen */
+        width: 100%; 
+        text-align: center; 
     }
 
-    /* Zentrierung und Skalierung des Titels */
     .about-title {
-        font-size: 28px; /* Etwas kleinere Schriftgröße für Tablets */
-        padding-left: 0; /* Entfernt die linke Einrückung */
+        font-size: 28px;
+        padding-left: 0; 
         margin-bottom: 15px;
     }
 
-    /* Zentrierung und Skalierung des Textes */
     .about-description {
-        font-size: 14px; /* Etwas kleinere Schriftgröße für Tablets */
+        font-size: 14px; 
         text-align: center;
         margin: 0 10px 20px 10px;
-        transform: none; /* Entfernt das Verschieben nach rechts */
+        transform: none; 
     }
 
-    /* Anpassung der Bilder */
     .about-image-small, .about-image-large {
-        width: 20%; /* Verkleinert die Bilder */
-        position: static; /* Entfernt die absolute Positionierung */
+        width: 40%; 
+        position: static; 
         transform: rotate(0deg); /* Rotation entfernen */
-        margin: 10px 0; /* Abstände zwischen den Bildern */
+        margin: 30px 0; 
     }
 }
 
-/* ---------------------------------Responsive Design für Smartphones------------------------ */
+/*Smartphone*/
 @media (max-width: 480px) {
     .about-title {
         font-size: 24px;
@@ -299,29 +296,29 @@ body, html {
 
     /* Anpassung der Bilder auf kleine Bildschirme */
     .about-image-small, .about-image-large {
-        width: 20%; /* Verkleinert die Bilder */
-        position: static; /* Entfernt die absolute Positionierung */
-        transform: rotate(0deg); /* Rotation entfernen */
-        margin: 10px 0; /* Abstände zwischen den Bildern */
+        width: 20%; 
+        position: static; 
+        transform: rotate(0deg); 
+        margin: 10px 0; 
     }
 }
 
 
-/* ___________________________________________________________________________Buttons_____________________________________________________________________________________________ */
+/* ____________________________________________Buttons____________________________________________________ */
 .content-section {
     display: flex;
-    justify-content: center; /* Zentriert die Buttons horizontal */
-    align-items: center; /* Zentriert die Buttons vertikal */
+    justify-content: center; 
+    align-items: center; 
     padding: 20px;
-    width: 100%; /* Stellt sicher, dass der Container die volle Breite einnimmt */
+    width: 100%; 
     box-sizing: border-box;
 }
 
 .buttons {
-    display: flex; /* Flexbox verwenden */
-    gap: 20px; /* Einheitlicher Abstand zwischen den Buttons */
-    flex-wrap: wrap; /* Buttons umbrechen lassen, falls nötig */
-    justify-content: center; /* Zentriert die Buttons horizontal */
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap;
+    justify-content: center; 
 }
 
 .btn {
@@ -329,19 +326,19 @@ body, html {
     color: black;
     border: none; 
     border-radius: 10px; 
-    display: inline-flex; /* Flexbox auf Button anwenden */
-    justify-content: center; /* Text horizontal zentrieren */
-    align-items: center; /* Text vertikal zentrieren */
-    padding: 0; /* Padding entfernt, um Unebenheiten zu vermeiden */
-    width: 150px; /* Einheitliche Breite */
-    height: 50px; /* Einheitliche Höhe */
-    font-size: 16px; /* Einheitliche Schriftgröße */
-    font-weight: normal; /* Stellt sicher, dass Schrift nicht zu dünn oder fett ist */
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 0; 
+    width: 150px; 
+    height: 50px; 
+    font-size: 16px; 
+    font-weight: normal; 
     text-align: center;
-    text-transform: none; /* Keine Großbuchstaben erzwingen */
+    text-transform: none; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
     transition: background-color 0.3s ease, transform 0.3s ease; 
-    box-sizing: border-box; /* Stellt sicher, dass Breite und Höhe nicht durch Padding beeinflusst werden */
+    box-sizing: border-box; 
 }
 
 .btn:hover {
@@ -350,7 +347,7 @@ body, html {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
 }
 
-/* Tablet-Ansicht (maximale Breite 768px) */
+/* Responsive Design - Tablet */
 @media (max-width: 768px) {
     .buttons {
         flex-direction: column; /* Buttons untereinander anordnen */
@@ -382,14 +379,11 @@ body, html {
     }
 }
 
-
-
-
-/*_____________________________________Titel für Timeline_______________________________________________________________*/
+/*_____________________________________Titel für Timeline________________________________________*/
 .timeline-header {
     text-align: center;
     margin-bottom: 20px;
-    margin-top: -50px; /* Verschiebt Titel und Untertitel nach oben */
+    margin-top: -50px; 
   }
   
   .timeline-title {
@@ -403,12 +397,12 @@ body, html {
     color: #666;
   }
 
-/* _______________________________TIMELINE_____________________________________________ */
+/* ________________________________________TIMELINE_____________________________________________ */
 .timeline {
     position: relative;
-    max-width: 600px; /* Größere Breite für die Timeline */
-    margin: 50px auto; /* Zentriert die Timeline */
-    padding: 20px 0; /* Abstand oben und unten */
+    max-width: 600px; 
+    margin: 50px auto; 
+    padding: 20px 0; 
 }
 
 /* Container für die Timeline-Elemente */
@@ -485,57 +479,57 @@ body, html {
     font-size: 16px;
 }
 
-/* Responsive Anpassungen */
+/* Responsive Anpassungen - Tablet */
 @media screen and (max-width: 600px) {
     .timeline {
         position: relative;
-        left: 50px; /* Schiebt die gesamte Timeline nach rechts */
+        left: 50px; 
     }
  /* Timeline-Titel zentrieren */
     .timeline-header {
-        display: flex; /* Flexbox auch in mobiler Ansicht verwenden */
-        flex-direction: column; /* Titel und Untertitel bleiben untereinander */
-        justify-content: center; /* Vertikale Zentrierung */
-        align-items: center; /* Horizontale Zentrierung */
-        text-align: center; /* Text innerhalb des Containers zentrieren */
-        margin: 0 auto; /* Stelle sicher, dass der Titel nicht verschoben wird */
-        padding: 0 10px; /* Geringes Padding für bessere Platznutzung */
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        text-align: center;
+        margin: 0 auto; 
+        padding: 0 10px;
     }
 
     .timeline-title {
-        font-size: 28px; /* Etwas kleinere Schriftgröße für mobile Ansicht */
+        font-size: 28px; 
         padding-right: 100px;
     }
 
     .timeline-subtitle {
-        font-size: 16px; /* Kleinere Schriftgröße für Untertitel */
+        font-size: 16px; 
         padding-right: 100px;
     }
 
     .timeline::after {
-        left: 80px; /* Passe den Wert an, um die vertikale Linie ebenfalls mitzuschieben */
+        left: 80px; 
     }
 
     .timeline-container {
         width: 60%;
-        padding-left: 90px; /* Schiebt den Inhalt weiter nach rechts */
+        padding-left: 90px; 
         padding-right: 25px;
     }
 
     .timeline-container.left::before,
     .timeline-container.right::before {
-        left: 80px; /* Verschiebt den Marker (Dreieck) nach rechts */
+        left: 80px; 
         border-width: 10px 10px 10px 0;
         border-color: transparent #000 transparent transparent;
     }
 
     .timeline-container.left::after,
     .timeline-container.right::after {
-        left: 35px; /* Schiebt das Rechteck weiter nach rechts */
+        left: 35px; 
     }
 
     .timeline-container.right {
-        left: 20px; /* Verschiebt die rechte Timeline-Box */
+        left: 20px; 
     }
 }
 
@@ -554,7 +548,7 @@ body, html {
     }
 }
 
-/*___________________________________________________________________________Random facts___________________________________________________________________________________*/
+/*___________________________________________Random facts_________________________________________________________*/
 .fact-container {
     text-align: center;
     margin: 20px 0;
@@ -568,7 +562,7 @@ body, html {
 
 .fact-bar {
     width: 100%;
-    max-width: 100%; /* Breite auf 100% angepasst, um die volle Breite zu nutzen */
+    max-width: 100%; 
     height: 100px;
     background-color: #ffffff;
     color: white;
@@ -586,11 +580,11 @@ body, html {
 .fact-text {
     font-family: 'Aptos Textkörper', sans-serif;
     font-size: 15px;
-    white-space: nowrap; /* Verhindert Zeilenumbruch, damit der Text einheitlich bleibt */
+    white-space: nowrap; 
     overflow: hidden;
-    opacity: 0; /* Startet unsichtbar */
-    transform: translateX(-100%); /* Startet außerhalb des Bildschirms links */
-    transition: opacity 1s ease, transform 1s ease; /* Übergangseffekte für eine flüssige Animation */
+    opacity: 0; 
+    transform: translateX(-100%); 
+    transition: opacity 1s ease, transform 1s ease; 
 }
 
 .slide-in {
@@ -600,7 +594,7 @@ body, html {
 
 .slide-out {
     opacity: 0;
-    transform: translateX(100%); /* Text bewegt sich nach rechts hinaus */
+    transform: translateX(100%); 
 }
 
 @keyframes slideIn {
@@ -627,22 +621,22 @@ body, html {
 
 
 
-/* Responsive Design */
+/* Responsive Design - Tablet*/
 @media screen and (max-width: 600px) {
     .fact-title {
-        font-size: 28px; /* Reduziert die Schriftgröße auf 28px in der mobilen Ansicht */
+        font-size: 28px; 
     }
 
     .fact-bar {
-        height: 80px; /* Passt die Höhe des Fact-Bars für die mobile Ansicht an */
-        font-size: 1.2em; /* Reduziert die Schriftgröße des Fact-Bars */
+        height: 80px; 
+        font-size: 1.2em; 
     }
 
     .fact-text {
-        font-size: 14px; /* Reduziert die Schriftgröße des Fließtextes in der mobilen Ansicht */
+        font-size: 14px; 
     }
 }
-/* ______________________________________________________________________CSS für html Projects________________________________________________________________________________________ */
+/* ________________________________________CSS für html Projects___________________________________________ */
 
 .projects-container {
     display: flex;
@@ -750,7 +744,7 @@ body, html {
     background-color: #080808;
 }
 
-/* ---------------- Media Queries für Responsive Design ---------------- */
+/*Responsive Design*/
 
 /* Für kleinere Bildschirme, die immer noch genug Platz für 3 Boxen haben */
 @media (max-width: 1024px) {
@@ -762,11 +756,11 @@ body, html {
     }
 
     .left-section {
-        width: 80%; /* Breitere Darstellung für das Bild */
+        width: 80%; 
     }
 
     .right-section {
-        width: 100%; /* Volle Breite für die Boxen */
+        width: 100%; 
     }
 
     .rounded-image {
@@ -782,7 +776,7 @@ body, html {
     }
 }
 
-/* Kleinere Tablets (max-width: 768px) */
+/*Tablets */
 @media (max-width: 768px) {
     .projects-container {
         flex-direction: column; /* Stapelt Bild und Boxen untereinander */
@@ -792,11 +786,11 @@ body, html {
     }
 
     .left-section {
-        width: 100%; /* Volle Breite für das Bild */
+        width: 100%; /
     }
 
     .right-section {
-        width: 100%; /* Volle Breite für die Boxen */
+        width: 100%;
     }
 
     .rounded-image {
@@ -812,7 +806,7 @@ body, html {
     }
 }
 
-/* Smartphones (max-width: 480px) */
+/* Smartphones */
 @media (max-width: 480px) {
     .projects-container {
         padding: 10px;
@@ -821,24 +815,23 @@ body, html {
     }
 
     .left-section, .right-section {
-        width: 100%; /* Volle Breite für beide Sektionen */
+        width: 100%; 
     }
 
     .rounded-image {
-        width: 90%;
-        height: auto;
+        width: 250px;
+        height: 250px;
     }
 
     .box-container {
-        grid-template-columns: 1fr; /* Eine Box pro Zeile */
+        grid-template-columns: 1fr;
         grid-gap: 15px;
         width: 100%;
         justify-items: center;
     }
 }
 
-/* ________________________________________________________________________________________CSS für skills.html___________________________________________________________________________ */
-/* Hauptcontainer für Skills Seite */
+/* ______________________________________________CSS für skills.html_________________________________________________ */
 .skills-container {
     display: flex;
     flex-direction: row;
@@ -853,15 +846,13 @@ body, html {
 }
 
 .skills-right-section h1 {
-    font-size: 22px; /* Passe die Schriftgröße nach Wunsch an */
+    font-size: 22px; 
     color: #000000;
-    margin-top: 10px; /* Optional: Abstand über dem Titel */
+    margin-top: 10px; 
     text-align: center;
     padding-top: 10px;
 }
 
-
-/* Linke Seite: Titel, Untertitel und Textblöcke */
 .skills-left-section {
     width: 50%;
     display: flex;
@@ -869,17 +860,16 @@ body, html {
     justify-content: flex-start;
     padding-left: 40px; /* Fügt Abstand vom linken Rand hinzu */
     padding-right: 20px;
-    margin-top: 70px; /* Schiebt den gesamten Abschnitt weiter nach oben */
-    position: relative; /* Ermöglicht absolute Positionierung des Titels */
+    margin-top: 70px; 
+    position: relative; 
 }
 
-/* Absatz (p) weiter oben positioniert und mit größeren Abständen */
 .skills-left-section p {
     font-size: 16px;
-    margin-bottom: 25px; /* Vergrößert den Abstand zwischen Absätzen */
-    line-height: 1.8; /* Erhöht den Zeilenabstand für bessere Lesbarkeit */
+    margin-bottom: 25px; 
+    line-height: 1.8; 
     color: #000000;
-    margin-top: -20px; /* Schiebt den ersten Absatz leicht nach oben */
+    margin-top: -20px; 
 }
 
 /* Rechte Seite: Bild mit abgerundeten Ecken */
@@ -889,7 +879,7 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 0; /* Kein zusätzlicher Abstand, der Container sorgt dafür */
+    padding-top: 0; 
 }
 
 /* Quadratische Form des Bildes */
@@ -899,7 +889,7 @@ body, html {
     border-radius: 15px;
     object-fit: cover;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Einheitlicher Abstand zum Back-Button */
+    margin-bottom: 20px; 
 }
 
 /* Zurück-Button */
@@ -919,7 +909,7 @@ body, html {
     background-color: #080808;
 }
 
-/* Anpassungen für Tablets (max-width: 768px) */
+/*Responsive Design - Tablet */
 @media (max-width: 768px) {
     .skills-container {
         flex-direction: column;
@@ -951,11 +941,11 @@ body, html {
 
     .social-container {
         gap: 15px;
-        margin-top: 10px; /* Abstand reduziert für kleinere Bildschirme */
+        margin-top: 10px; 
     }
 }
 
-/* Anpassungen für Smartphones (max-width: 480px) */
+/*Smartphone*/
 @media (max-width: 480px) {
     .skills-left-section h1 {
         font-size: 1.8rem;
@@ -985,10 +975,7 @@ body, html {
     }
 }
 
-
-
-
-/*__________________________________________________________________________contact.html_________________________________________________________________________________________*/
+/*________________________________________contact.html______________________________________________*/
 .contact-section {
     display: flex; 
     justify-content: center; 
@@ -1042,7 +1029,6 @@ body, html {
     box-sizing: border-box; 
 }
 
-/* Textbereich nicht vergrößerbar */
 .contact-container textarea {
     resize: none; 
     height: 100px; 
@@ -1062,10 +1048,6 @@ body, html {
     font-size: 16px;
 }
 
-.contact-container button:hover {
-    background-color: #555; 
-}
-
 .contact-back-button {
     position: absolute; 
     bottom: 100px; 
@@ -1075,82 +1057,75 @@ body, html {
     border-radius: 8px; 
     font-size: 16px;
     display: inline-block;
-    color: white; /* Textfarbe */
-    text-decoration: none; /* Entfernt die Unterstreichung */
+    color: white; 
+    text-decoration: none; 
 }
 
-/* Hover-Effekt für den Back-Button */
-.contact-back-button:hover {
-    background-color: #555; /* Dunklere Farbe beim Hover */
-}
-
-/* Standard-Layout für größere Bildschirme bleibt unverändert */
-
-/* Tablet-Ansicht (maximale Breite 768px) */
+/* Responsive Design - Tablet*/
 @media (max-width: 768px) {
     .contact-section {
-        flex-direction: column; /* Elemente werden untereinander gestapelt */
-        align-items: center; /* Zentriert die Elemente */
+        flex-direction: column; 
+        align-items: center; 
         padding: 10px;
     }
 
     .contact-container, .image-container {
-        width: 90%; /* Breite auf 90% des Bildschirms reduzieren */
-        margin: 15px 0; /* Gleichmäßiger Abstand oben und unten */
-        height: auto; /* Automatische Höhe */
+        width: 90%; 
+        margin: 15px 0; 
+        height: auto; 
     }
 
     .contact-back-button {
-        position: static; /* Entfernt die absolute Positionierung */
-        margin-top: 20px; /* Abstand zum oberen Rand */
-        align-self: center; /* Zentriert den Button */
+        position: static; 
+        margin-top: 20px; 
+        align-self: center; 
     }
 }
 
-/* Mobile-Ansicht (maximale Breite 480px) */
+/*Smartphone*/
 @media (max-width: 480px) {
     .contact-section {
-        flex-direction: column; /* Elemente untereinander stapeln */
-        align-items: center; /* Zentriert die Elemente */
+        flex-direction: column; 
+        align-items: center; 
         padding: 10px;
     }
 
     .contact-container, .image-container {
-        width: 100%; /* Breite auf 100% des Bildschirms setzen */
-        margin: 10px 0; /* Abstand oben und unten */
-        padding: 15px; /* Geringeres Padding für mehr Platz */
-        height: auto; /* Automatische Höhe */
+        width: 100%; 
+        margin: 10px 0;
+        padding: 15px; 
+        height: auto; 
     }
 
     .contact-container input,
     .contact-container textarea {
-        width: 100%; /* Volle Breite der Eingabefelder */
-        padding: 8px; /* Weniger Innenabstand für kleine Bildschirme */
-        margin-bottom: 10px; /* Abstand zum nächsten Element */
+        width: 100%; 
+        padding: 8px; 
+        margin-bottom: 10px; 
     }
 
     .contact-container h2 {
-        font-size: 1.2em; /* Kleinere Schriftgröße für mobile Ansicht */
+        font-size: 1.2em; 
     }
 
     .contact-back-button {
-        position: static; /* Positioniert den Button unter dem Formular */
-        margin-top: 20px; /* Abstand nach oben */
-        align-self: center; /* Zentriert den Button */
-        width: 80%; /* Button-Breite für Mobilgeräte anpassen */
+        position: static; 
+        margin-top: 20px; 
+        align-self: center; 
+        width: 80%; 
         text-align: center;
     }
 }
 
 
-/*---------------------------------------Verhindert horizontales scollen-----------------------------*/
+/*-_____________________________Verhindert horizontales scollen_____________________________________*/
 body {
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
-/*---------------------------------------Toogle Button-----------------------------------------------*/
+/*____________________________________Toogle Button__________________________________________________*/
 
-/* Weißmodus (Standard) */
+/* Weißmodus*/
 .light-mode {
     background-color: white;
     color: black;
@@ -1192,7 +1167,6 @@ body {
     color: white;
 }
 
-/* Optional: Schattierungen und Akzente im Dunkelmodus */
 .dark-mode .about-description {
     color: #cccccc; 
 }
@@ -1203,7 +1177,7 @@ body {
 }
 
 .dark-mode .timeline-container::after {
-    background-color: #fff; /* Füllung der Punkte im Dark Mode auf Weiß */
+    background-color: #fff; 
 }
 
 /* Toggle-Button-Styling */
@@ -1270,20 +1244,13 @@ input:checked + .slider:before {
     background-color: #686565;
 }
 
-
-
-
-
-
-
-/*___________________________________________________________________________________Emojis______________________________________________________________________*/
+/*_______________________________________Emojis_____________________________________________*/
 
 .icon1 {
     margin-right: 10px; 
     font-size: 1.5rem;
     flex-shrink: 0; 
   }
-
 
   .icon2 {
     margin-right: 10px; 

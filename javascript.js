@@ -40,15 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const titleImageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.intersectionRatio <= 0.15) { // Wenn nur noch 15 % sichtbar sind
-                entry.target.style.opacity = '0'; // Verblassen (ausblenden)
-                entry.target.style.transition = 'opacity 0.5s ease'; // Schnelles, aber weiches Ausblenden
+            if (entry.intersectionRatio <= 0.15) { 
+                entry.target.style.opacity = '0'; 
+                entry.target.style.transition = 'opacity 0.5s ease'; 
             } else {
-                entry.target.style.opacity = '1'; // Sichtbar machen, wenn mehr als 15 % sichtbar sind
-                entry.target.style.transition = 'opacity 0.5s ease'; // Schnelles, aber weiches Einblenden
+                entry.target.style.opacity = '1'; 
+                entry.target.style.transition = 'opacity 0.5s ease'; 
             }
         });
-    }, { threshold: [0.15] }); // Überwacht, wenn 15 % oder weniger sichtbar sind
+    }, { threshold: [0.15] }); 
 
   
     titleImageObserver.observe(titleImageContainer);
@@ -115,10 +115,6 @@ function showNextFact() {
 // Führt die Anzeige alle 5 Sekunden aus
 setInterval(showNextFact, 5000);
 
-// Startet die Anzeige mit dem ersten Fakt
-//showNextFact();
- 
-
 
 //ANIMATION 5 - Wechsel auf Darkmode - ToggleButton
 document.addEventListener("DOMContentLoaded", function () {
@@ -176,5 +172,5 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
 
 
 
-//Neue Funktion hier einfügen#############################
+//Animation 7 - Spotify -> Code wurde nach dem Erhalt des Tokens wieder entfernt
 
