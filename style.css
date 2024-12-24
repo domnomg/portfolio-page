@@ -47,7 +47,6 @@ body, html {
     transition: transform 0.1s ease-out;
 }
 
-
 /*__________________________________________Spotify__________________________________________*/
 .spotify-container {
     position: absolute; 
@@ -86,8 +85,6 @@ body, html {
         padding: 0;
     }
 }
-
-
 
 /*__________________________________________Icons Linkdin / Instagram / Github__________________________________________*/
 .social-container {
@@ -203,10 +200,9 @@ body, html {
     }
 
     .about-image-small, .about-image-large {
-        max-width: 40%; /* Sicherstellen, dass die Bilder nicht zu groß werden */
+        max-width: 40%; 
     }
 }
-
 
 /* Linke Seite: Titel und Text */
 .about-left {
@@ -245,7 +241,7 @@ body, html {
 /* Fancybild_P22 */
 .about-image-small {
     width: 50%;
-    max-width: 40%; /* Begrenzung der maximalen Breite in Prozent */
+    max-width: 40%; 
     transform: rotate(-15deg);
     position: absolute;
     top: -30px;
@@ -256,7 +252,7 @@ body, html {
 /* Profilbild_P2 */
 .about-image-large {
     width: 70%;
-    max-width: 70%; /* Begrenzung der maximalen Breite in Prozent */
+    max-width: 70%; 
     position: absolute;
     top: 5px;
     left: 20px;
@@ -316,7 +312,6 @@ body, html {
         margin: 10px 0; 
     }
 }
-
 
 /* ____________________________________________Buttons____________________________________________________ */
 .content-section {
@@ -664,8 +659,6 @@ body, html {
     gap: 40px;
 }
 
-
-
 /* Linke Seite: Bild mit abgerundeten Ecken */
 .left-section {
     width: 40%;
@@ -674,7 +667,6 @@ body, html {
     flex-direction: column;
     align-items: center;
     margin-left: -10px;
-
 }
 
 /* Rechte Seite: Boxen */
@@ -757,7 +749,6 @@ body, html {
 }
 
 /*Responsive Design*/
-
 @media (min-width: 1600px) {
     .projects-container {
         max-width: 1200px; 
@@ -1062,8 +1053,8 @@ body, html {
 .contact-container button {
     margin-top: 0px; 
     padding: 10px 20px; 
-    background-color: #000000; 
-    color: white; 
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0); 
     border: none; 
     border-radius: 8px; 
     cursor: pointer; 
@@ -1074,8 +1065,8 @@ body, html {
 
 .submit-button {
     padding: 10px 20px;
-    background-color: #000000;
-    color: white;
+    background-color: #fbfbfb;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -1087,8 +1078,9 @@ body, html {
 
 .reset-button {
     padding: 10px 20px;
+    margin-left: 234px;
     background-color: #000000;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -1283,7 +1275,6 @@ input:checked + .slider:before {
 }
 
 /*_______________________________________Emojis_____________________________________________*/
-
 .icon1 {
     margin-right: 10px; 
     font-size: 1.5rem;
