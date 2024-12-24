@@ -196,6 +196,18 @@ body, html {
     background-color: white;
 }
 
+@media (min-width: 1600px) {
+    .about-container {
+        max-width: 1200px; /* Gesamtbreite der Container begrenzen */
+        margin: 0 auto;
+    }
+
+    .about-image-small, .about-image-large {
+        max-width: 40%; /* Sicherstellen, dass die Bilder nicht zu groß werden */
+    }
+}
+
+
 /* Linke Seite: Titel und Text */
 .about-left {
     width: 30%;
@@ -621,8 +633,6 @@ body, html {
     }
 }
 
-
-
 /* Responsive Design - Tablet*/
 @media screen and (max-width: 600px) {
     .fact-title {
@@ -748,6 +758,12 @@ body, html {
 
 /*Responsive Design*/
 
+@media (min-width: 1600px) {
+    .projects-container {
+        max-width: 1200px; 
+        margin: 0 auto; 
+    } }
+
 /* Für kleinere Bildschirme, die immer noch genug Platz für 3 Boxen haben */
 @media (max-width: 1024px) {
     .projects-container {
@@ -837,12 +853,12 @@ body, html {
 .skills-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap; /* Verhindert, dass die Inhalte auf mehrere Zeilen umbrechen */
-    width: 80%; /* Begrenzte Breite des Containers */
-    max-width: 1200px; /* Maximale Breite für größere Bildschirme */
-    justify-content: space-between; /* Elemente gleichmäßig verteilen */
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
     padding-top: 70px;
-    margin: 0 auto; /* Zentriert den Container horizontal */
+    padding-left: 40px; /* Gleichmäßiger Abstand links und rechts */
+    padding-right: 40px;
     box-sizing: border-box;
     gap: 40px;
 }
@@ -866,37 +882,32 @@ body, html {
     position: relative; 
 }
 
-.skills-left-section, .skills-right-section {
-    flex-shrink: 0; /* Verhindert das Schrumpfen der Abschnitte */
-}
-
-.skills-left-section {
-    width: 48%; /* Proportionale Breite der linken Seite */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 70px;
-    position: relative; 
-    text-align: left; /* Text bleibt linksbündig */
+.skills-left-section p {
+    font-size: 16px;
+    margin-bottom: 25px; 
+    line-height: 1.8; 
+    color: #000000;
+    margin-top: -20px; 
 }
 
 /* Rechte Seite: Bild mit abgerundeten Ecken */
 .skills-right-section {
-    width: 48%; /* Proportionale Breite der rechten Seite */
+    width: 40%;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 0; 
 }
 
 /* Quadratische Form des Bildes */
 .skills-rounded-image {
-    width: 100%; /* Passt die Größe des Bildes an die Breite der rechten Sektion an */
-    max-width: 350px; /* Verhindert, dass das Bild zu groß wird */
-    height: auto;
+    width: 400px;
+    height: 400px;
     border-radius: 15px;
     object-fit: cover;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
 }
 
 /* Zurück-Button */
@@ -915,6 +926,12 @@ body, html {
 .skills-back-button:hover {
     background-color: #080808;
 }
+
+@media (min-width: 1600px) {
+    .skills-container {
+        max-width: 1200px; 
+        margin: 0 auto; 
+    } }
 
 /*Responsive Design - Tablet */
 @media (max-width: 768px) {
@@ -1003,7 +1020,7 @@ body, html {
 
 .image-container {
     width: 400px; 
-    height: 400px; 
+    height: 465px; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
@@ -1055,19 +1072,32 @@ body, html {
     font-size: 16px;
 }
 
-.contact-back-button {
-    position: fixed; /* Position bleibt relativ zum Viewport */
-    bottom: 15%; /* 10% des Viewport-Höhenmaßes */
-    right: 28%; /* 20% des Viewport-Breitenmaßes */
-    background-color: #000000; 
-    padding: 10px 20px; 
-    border-radius: 8px; 
+.submit-button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Times New Roman';
     font-size: 16px;
-    display: inline-block;
-    color: white; 
-    text-decoration: none; 
+    text-align: center;
 }
 
+.reset-button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Times New Roman';
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none; 
+}
 
 /* Responsive Design - Tablet*/
 @media (max-width: 768px) {
